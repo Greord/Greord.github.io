@@ -23,9 +23,9 @@ const name = {
 
 function SearchPage(){
     document.getElementById("body").innerHTML = 
-    "<h1 style='text-align: center;' id='searchtitle'>Search</h1>" +
+    "<h1 style='text-align: center;' class='Name'>Search</h1>" +
     "<br>" +
-    "<input type='text' id='searchbar' onkeyup='SearchFunction()' placeholder='Search for words..'>" +
+    "<input type='text' class='WordBlock' onkeyup='SearchFunction()' placeholder='Search for words..'>" +
     "<br><br>" +
     "<ul id='wordlist'>" +
     keys.map(key => "<li><a class='button' href='word.html?key=" + key + "'>" + name[key] + "</a></li><br>").join('') +
@@ -53,5 +53,5 @@ function SearchFunction() {
 
 
 function GeneratePage(key) {
-    document.getElementById("body").innerHTML = "<h1 style='text-align: center;' id='name'>" + name[key] + "</h1>" + "<br>" + "<h2 id='meaninghead'>Meaning</h2>" + "<p id='meaning'>" + definition[key] + "</p>" + "<h2 id='examplehead'>Example</h2>" + "<p id='example'>" + example[key] + "</p>" + "<h2 id='parthead'>Part of Speech</h2>" + "<p id='part'>" + partOfSpeech[key] + "</p>" + "<h2 id='etymologyhead'>Etymology</h2>" + "<p id='etymology'>" + etymology[key] + "</p>";
+    document.getElementById("body").innerHTML = "<div class='Name'><h1 style='text-align: center;' id='name'>" + name[key] + "</h1>" + "</div><br>" + "<div class='WordBlock'><h2 id='meaninghead'>Meaning</h2>" + "<p id='meaning'>" + definition[key] + "</p></div><br><br>" + "<div class='WordBlock'><h2 id='examplehead'>Example</h2>" + "<p id='example'>" + example[key] + "</p>" + "</div><br><br><div class='WordBlock'><h2 id='parthead'>Part of Speech</h2>" + "<p id='part'>" + partOfSpeech[key] + "</p>" + "</div><br><br><div class='WordBlock'><h2 id='etymologyhead'>Etymology</h2>" + "<p id='etymology'>" + etymology[key] + "</p></div>";
 }
