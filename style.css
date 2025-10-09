@@ -1,0 +1,14 @@
+.button {
+  background-color: #c8c8c8; /* Button background color */
+  color: #000000; /* Text color */
+  padding: 2px 20px; /* Spacing inside the button */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline from the link */
+  border-radius: 5px; /* Add rounded corners */
+  display: inline-block; /* Allows padding and other box model properties */
+  font-family: sans-serif; /* Example font */
+}
+
+.button:hover {
+  background-color: #454545; /* Darken the color on hover */
+}
