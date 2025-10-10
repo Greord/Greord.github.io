@@ -1,23 +1,114 @@
-const keys = ["67f", "67m"];
+const keys = ["67f", "67m","67t","BRf","BRm","ASf","ASm","MMf","MMm","R","DTf",
+    "DTm","MSf","MSm","TPf","TPm","BKf","BKm","TSf","TSm"];
 const name = {
         "67f": "Hexacontaheptaphobia",
-        "67m": "Hexacontaheptamania"
+        "67m": "Hexacontaheptamania",
+        "67t": "Hexacontaheptabasanizo",
+        "BRf": "Cyberopsissaproencephalphobia",
+        "BRm": "Cyberopsissaproencephalphomania",
+        "ASf": "Altussessiophobia",
+        "ASm": "Altussessiomania",
+        "MMf": "Mexicamezedesphobia",
+        "MMm": "Mexicamezedesmania",
+        "R": "Repection",
+        "DTf": "Didaskalostopophobia",
+        "DTm": "Didaskalostopomania",
+        "MSf": "Megasynphobia",
+        "MSm": "Megasynmania",
+        "TPf": "Tuposphobia",
+        "TPm": "Tupomania",
+        "BKm": "Biftekimania",
+        "BKf": "Biftekiphobia",
+        "TSf": "Tomatasausephobia",
+        "TSm": "Tomatasausemania"
     };
     const definition = {
         "67f": "An extreme or irrational fear of the number 67.",
-        "67m": "An obsession or compulsion related to the number 67."
+        "67m": "An obsession or compulsion related to the number 67.",
+        "67t": "To tourture with the number 67.",
+        "BRf": "Fear of Internet Brainrot such as Tripi Tropi, Skibity Toilet",
+        "BRm": "Obsession with Internet Brainrot such as Tripi Tropi, Skibity Toilet",
+        "ASf": "Fear of old things",
+        "ASm": "Obsession with old things",
+        "MMf": "Fear of Tacos",
+        "MMm": "Obsession with Tacos",
+        "R": "Repect and attention",
+        "DTf": "Fear of going to school",
+        "DTm": "Obsession with going to school",
+        "MSf": "Fear of big companies",
+        "MSm": "Obsession with big companies",
+        "TPf": "Fear of patterns",
+        "TPm": "Obsession with patterns",
+        "BKm": "Obsession with burgers",
+        "BKf": "Fear of burgers",
+        "TSf": "Fear of ketchup",
+        "TSm": "Obsession with ketchup"
     };
     const example = {
         "67f": "Her hexacontaheptaphobia made it difficult for her to stay in a hotel room numbered 67.",
-        "67m": "His obsession with the number 67 led him to collect every item he could find that featured it."
+        "67m": "His obsession with the number 67 led him to collect every item he could find that featured it.",
+        "67t": "They hexacontaheptabasanizoed him by forcing him to watch a video that repeated the number 67 over and over again.",
+        "BRf": "Her cyberopsissaproencephalphobia made it hard for her to watch videos of Tripi Tropi without feeling anxious.",
+        "BRm": "His cyberopsissaproencephalmania led him to spend hours watching Skibity Toilet videos online.",
+        "ASf": "Her altussessiophobia made it difficult for her to visit antique shops.",
+        "ASm": "His altussessiomania led him to collect vintage items and old books.",
+        "MMf": "Her mexicamezedesphobia made it hard for her to attend taco festivals.",
+        "MMm": "His mexicamezedesmania led him to try every taco recipe he could find.",
+        "R": "The teacher emphasized the importance of repection in the classroom.",
+        "DTf": "Her didaskalostopophobia made it hard for her to attend school regularly.",
+        "DTm": "His didaskalostopomania led him to constantly think about school and learning.",
+        "MSf": "Her megasynphobia made it difficult for her to shop at large retail stores.",
+        "MSm": "His megasynmania led him to admire and follow the practices of big corporations.",
+        "TPf": "Her tupophobia made it hard for her to wear clothes with busy patterns.",
+        "TPm": "His tupomania led him to decorate his home with intricate and colorful patterns.",
+        "BKm": "Her biftekimania led her to crave burgers multiple times a week.",
+        "BKf": "His biftekiphobia made it difficult for him to eat at burger joints.",
+        "TSf": "Her tomatasausephobia made it hard for her to eat foods with ketchup.",
+        "TSm": "His tomatasausemania led him to put ketchup on almost every meal."
     };
     const partOfSpeech = {
         "67f": "Noun",
-        "67m": "Noun"
+        "67m": "Noun",
+        "67t": "Verb",
+        "BRf": "Noun",
+        "BRm": "Noun",
+        "ASf": "Noun",
+        "ASm": "Noun",
+        "MMf": "Noun",
+        "MMm": "Noun",
+        "R": "Noun",
+        "DTf": "Noun",
+        "DTm": "Noun",
+        "MSf": "Noun",
+        "MSm": "Noun",
+        "TPf": "Noun",
+        "TPm": "Noun",
+        "BKf": "Noun",
+        "BKm": "Noun",
+        "TSf": "Noun",
+        "TSm": "Noun"
     };
     const etymology = {
         "67f": "From Greek 'hexaconta' (sixty) + 'hepta' (seven) + 'phobia' (fear).",
-        "67m": "From Greek 'hexaconta' (sixty) + 'hepta' (seven) + 'mania' (obsession)."
+        "67m": "From Greek 'hexaconta' (sixty) + 'hepta' (seven) + 'mania' (obsession).",
+        "67t": "From Greek 'hexaconta' (sixty) + 'hepta' (seven) + 'basanizo' (to torture).",
+        "BRf": "From 'cyber' (relating to computers) + 'opsis' (see) + 'sapro' (rot) + 'encephal' (brain) + 'phobia' (fear).",
+        "BRm": "From 'cyber' (relating to computers) + 'opsis' (see) + 'sapro' (rot) + 'encephal' (brain) + 'mania' (obsession).",
+        "ASf": "From Latin 'altus' (old) + 'sessio' (sitting) + 'phobia' (fear).",
+        "ASm": "From Latin 'altus' (old) + 'sessio' (sitting) + 'mania' (obsession).",
+        "MMf": "From 'Mexico' + 'mezedes' (light snack) + 'phobia' (fear).",
+        "MMm": "From 'Mexico' + 'mezedes' (light snack) + 'mania' (obsession).",
+        "R": "From 'Respect' + 'ion' from Attention",
+        "DTf": "From Greek 'didaskalos' (teacher) + 'topo' (place) + 'phobia' (fear).",
+        "DTm": "From Greek 'didaskalos' (teacher) + 'topo' (place) + 'mania' (obsession).",
+        "MSf": "From Greek 'mega' (big) + 'syn' (together) + 'phobia' (fear).",
+        "MSm": "From Greek 'mega' (big) + 'syn' (together) + 'mania' (obsession).",
+        "TPf": "From Greek 'typos' (pattern) + 'phobia' (fear).",
+        "TPm": "From Greek 'typos' (pattern) + 'mania' (obsession).",
+        "BKf": "From 'Biftek' (burger) + 'phobia' (fear).",
+        "BKm": "From 'Biftek' (burger) + 'mania' (obsession).",
+        "TSf": "From 'Tomatasause' (ketchup) + 'phobia' (fear).",
+        "TSm": "From 'Tomatasause' (ketchup) + 'mania' (obsession)."
     };
 
 
@@ -53,5 +144,24 @@ function SearchFunction() {
 
 
 function GeneratePage(key) {
-    document.getElementById("body").innerHTML = "<div class='Name'><h1 style='text-align: center;' id='name'>" + name[key] + "</h1>" + "</div><br>" + "<div class='WordBlock'><h2 id='meaninghead'>Meaning</h2>" + "<p id='meaning'>" + definition[key] + "</p></div><br><br>" + "<div class='WordBlock'><h2 id='examplehead'>Example</h2>" + "<p id='example'>" + example[key] + "</p>" + "</div><br><br><div class='WordBlock'><h2 id='parthead'>Part of Speech</h2>" + "<p id='part'>" + partOfSpeech[key] + "</p>" + "</div><br><br><div class='WordBlock'><h2 id='etymologyhead'>Etymology</h2>" + "<p id='etymology'>" + etymology[key] + "</p></div>";
+    document.getElementById("body").innerHTML = "<div class='Name'><h1 style='text-align: center;' id='name'>" 
+    + name[key] 
+    + "</h1>" 
+    + "</div><br>" 
+    + "<div class='WordBlock'><h2 id='meaninghead'>Meaning</h2>" 
+    + "<p id='meaning'>" 
+    + definition[key] 
+    + "</p></div><br><br>" 
+    + "<div class='WordBlock'><h2 id='examplehead'>Example</h2>" 
+    + "<p id='example'>" 
+    + example[key] 
+    + "</p>" 
+    + "</div><br><br><div class='WordBlock'><h2 id='parthead'>Part of Speech</h2>" 
+    + "<p id='part'>" 
+    + partOfSpeech[key] 
+    + "</p>" 
+    + "</div><br><br><div class='WordBlock'><h2 id='etymologyhead'>Etymology</h2>" 
+    + "<p id='etymology'>" 
+    + etymology[key] 
+    + "</p></div>";
 }
