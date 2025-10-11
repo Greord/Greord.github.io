@@ -1,5 +1,6 @@
 const keys = ["67f", "67m","67t","BRf","BRm","ASf","ASm","MMf","MMm","R","DTf",
-    "DTm","MSf","MSm","TPf","TPm","BKf","BKm","TSf","TSm"];
+    "DTm","MSf","MSm","TPf","TPm","BKf","BKm","TSf","TSm","EUf","EUm"];
+
 const name = {
         "67f": "Hexacontaheptaphobia",
         "67m": "Hexacontaheptamania",
@@ -20,7 +21,9 @@ const name = {
         "BKm": "Biftekimania",
         "BKf": "Biftekiphobia",
         "TSf": "Tomatasausephobia",
-        "TSm": "Tomatasausemania"
+        "TSm": "Tomatasausemania",
+        "EUf": "Euphobia",
+        "EUm": "Eumania"
     };
     const definition = {
         "67f": "An extreme or irrational fear of the number 67.",
@@ -42,7 +45,9 @@ const name = {
         "BKm": "Obsession with burgers",
         "BKf": "Fear of burgers",
         "TSf": "Fear of ketchup",
-        "TSm": "Obsession with ketchup"
+        "TSm": "Obsession with ketchup",
+        "EUf": "Fear of good things",
+        "EUm": "Obsession with good things"
     };
     const example = {
         "67f": "Her hexacontaheptaphobia made it difficult for her to stay in a hotel room numbered 67.",
@@ -64,7 +69,9 @@ const name = {
         "BKm": "Her biftekimania led her to crave burgers multiple times a week.",
         "BKf": "His biftekiphobia made it difficult for him to eat at burger joints.",
         "TSf": "Her tomatasausephobia made it hard for her to eat foods with ketchup.",
-        "TSm": "His tomatasausemania led him to put ketchup on almost every meal."
+        "TSm": "His tomatasausemania led him to put ketchup on almost every meal.",
+        "EUf": "Her euphobia made it difficult for her to accept compliments or positive feedback.",
+        "EUm": "His eumania led him to constantly seek out new experiences and opportunities for joy."
     };
     const partOfSpeech = {
         "67f": "Noun",
@@ -86,7 +93,9 @@ const name = {
         "BKf": "Noun",
         "BKm": "Noun",
         "TSf": "Noun",
-        "TSm": "Noun"
+        "TSm": "Noun",
+        "EUf": "Noun",
+        "EUm": "Noun"
     };
     const etymology = {
         "67f": "From Greek 'hexaconta' (sixty) + 'hepta' (seven) + 'phobia' (fear).",
@@ -108,8 +117,48 @@ const name = {
         "BKf": "From 'Biftek' (burger) + 'phobia' (fear).",
         "BKm": "From 'Biftek' (burger) + 'mania' (obsession).",
         "TSf": "From 'Tomatasause' (ketchup) + 'phobia' (fear).",
-        "TSm": "From 'Tomatasause' (ketchup) + 'mania' (obsession)."
+        "TSm": "From 'Tomatasause' (ketchup) + 'mania' (obsession).",
+        "EUf": "From Greek 'eu' (good) + 'phobia' (fear).",
+        "EUm": "From Greek 'eu' (good) + 'mania' (obsession)."
     };
+    const prenounciation = {
+        "67f": "Sound/67f.ogg",
+        "67m": "Sound/67m.ogg",
+        "67t": "Sound/67t.ogg",
+        "BRf": "Sound/NAN.ogg",
+        "BRm": "Sound/NAN.ogg",
+        "ASf": "Sound/NAN.ogg",
+        "ASm": "Sound/NAN.ogg",
+        "MMf": "Sound/NAN.ogg",
+        "MMm": "Sound/NAN.ogg",
+        "R": "Sound/NAN.ogg",
+        "DTf": "Sound/NAN.ogg",
+        "DTm": "Sound/NAN.ogg",
+        "MSf": "Sound/NAN.ogg",
+        "MSm": "Sound/NAN.ogg",
+        "TPf": "Sound/NAN.ogg",
+        "TPm": "Sound/NAN.ogg",
+        "BKf": "Sound/NAN.ogg",
+        "BKm": "Sound/NAN.ogg",
+        "TSf": "Sound/NAN.ogg",
+        "TSm": "Sound/NAN.ogg",
+        "EUf": "Sound/NAN.ogg",
+        "EUm": "Sound/NAN.ogg"
+    };
+    const Bookkeys = ["TAJ"];
+    const Titles = {
+        "TAJ": "Tim and Joe"
+    };
+    const Authors = {
+        "TAJ": "Xavier Zeppuhar"
+    };
+    const Generes = {
+        "TAJ": "Realistic Fiction"
+    };
+    const Pages = {
+        "TAJ": [1, "Images/Tim_And_Joe/PG1.png"]
+    };
+
 
 
 function SearchPage(){
@@ -120,8 +169,16 @@ function SearchPage(){
     "<br><br>" +
     "<ul id='wordlist'>" +
     keys.map(key => "<li><a class='button' href='word.html?key=" + key + "'>" + name[key] + "</a></li><br>").join('') +
+    "</ul>"+
+    "<br><br>" +
+    "<h1 style='text-align: center;' class='Name'>Books</h1>" +
+    "<br>" +
+    "<ul id='wordlist'>" +
+    Bookkeys.map(key => "<li><a class='button' href='word.html?key=" + key + "'>" + Titles[key] + "</a></li><br>").join('') +
     "</ul>";
+    ;
 }
+
 
 function SearchFunction() {
     var input, filter, ul, li, a, i, txtValue;
@@ -144,6 +201,24 @@ function SearchFunction() {
 
 
 function GeneratePage(key) {
+    if (Bookkeys.includes(key)) {
+        let BookHTML = "";
+        for (let i = 1; i <= Pages[key][0]; i++) {
+            BookHTML += "<img class='BookPage' src='" + Pages[key][i]+ "' alt='Page " + i + "'><br><br>";
+        }
+
+        document.getElementById("body").innerHTML = "<div class='Name'><h1 style='text-align: center;' id='name'>" 
+        + Titles[key] 
+        + "</h1>"
+        + "<h2 class='WordBlock' id='author'>"
+        + "By: " + Authors[key]
+        + "</h2>"
+        + "<h3 class='WordBlock' id='genre'>"
+        + "Genre: " + Generes[key]
+        + "</h3>"
+        + "</div><br>" 
+        + BookHTML;
+    } else {
     document.getElementById("body").innerHTML = "<div class='Name'><h1 style='text-align: center;' id='name'>" 
     + name[key] 
     + "</h1>" 
@@ -163,5 +238,10 @@ function GeneratePage(key) {
     + "</div><br><br><div class='WordBlock'><h2 id='etymologyhead'>Etymology</h2>" 
     + "<p id='etymology'>" 
     + etymology[key] 
-    + "</p></div>";
+    + "</p></div>"
+    + "<br><br><div class='WordBlock'><h2 id='pronounciationhead'>Pronounciation</h2>"
+    + "<audio controls><source src='" + prenounciation[key] + "' type='audio/ogg'>Your browser does not support the audio element.</audio>"
+    + "</div>"
+   ;
+    }
 }
