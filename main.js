@@ -162,7 +162,7 @@ const name = {
 
 
 function SearchPage(){
-    document.getElementById("body").innerHTML = 
+    document.getElementById("body").innerHTML = '<img class="corner-image" src="Images/back.png" alt="Search" width="88.5" height="74" onclick="location.href=\'index.html\'">' +
     "<h1 style='text-align: center;' class='Name'>Search</h1>" +
     "<br>" +
     "<input type='text' class='WordBlock' onkeyup='SearchFunction()' placeholder='Search for words..'>" +
@@ -207,7 +207,8 @@ function GeneratePage(key) {
             BookHTML += "<img class='BookPage' src='" + Pages[key][i]+ "' alt='Page " + i + "'><br><br>";
         }
 
-        document.getElementById("body").innerHTML = "<div class='Name'><h1 style='text-align: center;' id='name'>" 
+        document.getElementById("body").innerHTML = '<img class="corner-image" src="Images/back.png" alt="Search" width="88.5" height="74" onclick="location.href=\'search.html\'">'
+        +"<div class='Name'><h1 style='text-align: center;' id='name'>" 
         + Titles[key] 
         + "</h1>"
         + "<h2 class='WordBlock' id='author'>"
@@ -219,7 +220,8 @@ function GeneratePage(key) {
         + "</div><br>" 
         + BookHTML;
     } else {
-    document.getElementById("body").innerHTML = "<div class='Name'><h1 style='text-align: center;' id='name'>" 
+    document.getElementById("body").innerHTML = '<img class="corner-image" src="Images/back.png" alt="Search" width="88.5" height="74" onclick="location.href=\'search.html\'">'
+    +"<div class='Name'><h1 style='text-align: center;' id='name'>" 
     + name[key] 
     + "</h1>" 
     + "</div><br>" 
