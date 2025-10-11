@@ -1,12 +1,11 @@
 const keys = ["67f", "67m","67t","BRf","BRm","ASf","ASm","MMf","MMm","R","DTf",
     "DTm","MSf","MSm","TPf","TPm","BKf","BKm","TSf","TSm","EUf","EUm"];
-
 const name = {
         "67f": "Hexacontaheptaphobia",
         "67m": "Hexacontaheptamania",
         "67t": "Hexacontaheptabasanizo",
         "BRf": "Cyberopsissaproencephalphobia",
-        "BRm": "Cyberopsissaproencephalphomania",
+        "BRm": "Cyberopsissaproencephalmania",
         "ASf": "Altussessiophobia",
         "ASm": "Altussessiomania",
         "MMf": "Mexicamezedesphobia",
@@ -125,25 +124,25 @@ const name = {
         "67f": "Sound/67f.ogg",
         "67m": "Sound/67m.ogg",
         "67t": "Sound/67t.ogg",
-        "BRf": "Sound/NAN.ogg",
-        "BRm": "Sound/NAN.ogg",
-        "ASf": "Sound/NAN.ogg",
-        "ASm": "Sound/NAN.ogg",
-        "MMf": "Sound/NAN.ogg",
-        "MMm": "Sound/NAN.ogg",
-        "R": "Sound/NAN.ogg",
-        "DTf": "Sound/NAN.ogg",
-        "DTm": "Sound/NAN.ogg",
-        "MSf": "Sound/NAN.ogg",
-        "MSm": "Sound/NAN.ogg",
-        "TPf": "Sound/NAN.ogg",
-        "TPm": "Sound/NAN.ogg",
-        "BKf": "Sound/NAN.ogg",
-        "BKm": "Sound/NAN.ogg",
-        "TSf": "Sound/NAN.ogg",
-        "TSm": "Sound/NAN.ogg",
-        "EUf": "Sound/NAN.ogg",
-        "EUm": "Sound/NAN.ogg"
+        "BRf": "Sound/BRf.ogg",
+        "BRm": "Sound/BRm.ogg",
+        "ASf": "Sound/ASf.ogg",
+        "ASm": "Sound/ASm.ogg",
+        "MMf": "Sound/MMf.ogg",
+        "MMm": "Sound/MMm.ogg",
+        "R": "Sound/R.ogg",
+        "DTf": "Sound/DTf.ogg",
+        "DTm": "Sound/DTm.ogg",
+        "MSf": "Sound/MSf.ogg",
+        "MSm": "Sound/MSm.ogg",
+        "TPf": "Sound/TPf.ogg",
+        "TPm": "Sound/TPm.ogg",
+        "BKf": "Sound/BKf.ogg",
+        "BKm": "Sound/BKm.ogg",
+        "TSf": "Sound/TSf.ogg",
+        "TSm": "Sound/TSm.ogg",
+        "EUf": "Sound/EUf.ogg",
+        "EUm": "Sound/EUm.ogg"
     };
     const Bookkeys = ["TAJ"];
     const Titles = {
@@ -246,5 +245,4 @@ function GeneratePage(key) {
     + "</div>"
    ;
     }
-
 }
