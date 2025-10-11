@@ -11,7 +11,7 @@ const name = {
         "ASm": "Altussessiomania",
         "MMf": "Mexicamezedesphobia",
         "MMm": "Mexicamezedesmania",
-        "R": "Repection",
+        "R": "Respection",
         "DTf": "Didaskalostopophobia",
         "DTm": "Didaskalostopomania",
         "MSf": "Megasynphobia",
@@ -246,4 +246,5 @@ function GeneratePage(key) {
     + "</div>"
    ;
     }
+
 }
