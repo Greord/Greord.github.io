@@ -105,5 +105,95 @@ function GameStart(GameType) {
     }
     const timerInterval = setInterval(TimerTick, 1000);
   }
+  else if (GameType === "Hangman"){
+    Hangman();
+  }
+}
+// Hangman Game Logic
+function Hangman() {
+    // Hangman game-specific variables are now encapsulated here.
+    let word = '';
+    let guessedLetters = [];
+    let attemptsLeft = 10;
+
+    // The DisplayMan function can be defined here or outside, but must be accessible.
+    function DisplayMan() {
+        let manParts = 10 - attemptsLeft;
+        let hangmanStages = [
+            "HangmanAssets/0.jpg", "HangmanAssets/1.jpg", "HangmanAssets/2.jpg",
+            "HangmanAssets/3.jpg", "HangmanAssets/4.jpg", "HangmanAssets/5.jpg",
+            "HangmanAssets/6.jpg", "HangmanAssets/7.jpg", "HangmanAssets/8.jpg",
+            "HangmanAssets/9.jpg", "HangmanAssets/10.jpg"
+        ];
+        return `<img src='${hangmanStages[manParts]}' alt='Hangman Stage ${manParts}' />`;
+    }
+
+    // Function to update the game display.
+    function updateDisplay() {
+        const displayWord = word
+            .split('')
+            .map(letter => (guessedLetters.includes(letter) ? letter : '_'))
+            .join(' ');
+        
+        const gameArea = document.getElementById("GameArea");
+        gameArea.innerHTML = `
+            <div class='WordBlock'>${displayWord}</div>
+            <div class='hangmanDisplay' id='hangmanDisplay'>${DisplayMan()}</div>
+            <div class='WordBlock'>Attempts Left: ${attemptsLeft}</div>
+            <input class='Input' type="text" id="LetterInput" maxlength="1" placeholder="Guess a letter" />
+            <button class="button" id="submitLetterBtn">Submit</button>
+        `;
+
+        // Attach event listener using addEventListener, which is more reliable
+        // than inline onclick calls, especially with dynamically generated HTML.
+        document.getElementById("submitLetterBtn").addEventListener('click', guessLetter);
+        document.getElementById("LetterInput").addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                guessLetter();
+            }
+        });
+    }
+
+    // Function to handle a letter guess.
+    function guessLetter() {
+        const letterInput = document.getElementById("LetterInput");
+        const letter = letterInput.value.toLowerCase();
+        letterInput.value = '';
+
+        if (!letter || guessedLetters.includes(letter)) {
+            return;
+        }
+
+        guessedLetters.push(letter);
+
+        if (!word.includes(letter)) {
+            attemptsLeft--;
+        }
+        
+        updateDisplay();
+
+        if (attemptsLeft <= 0) {
+            document.getElementById("GameArea").innerHTML = `<h2>Game Over! The word was: ${word}</h2><br><button class="button" onclick="window.location.reload();">Play Again</button>`;
+        } else if (!word.split('').some(l => !guessedLetters.includes(l))) {
+            document.getElementById("GameArea").innerHTML = `<h2>Congratulations! You guessed the word: ${word}</h2><br><button class="button" onclick="window.location.reload();">Play Again</button>`;
+        }
+    }
+
+    // Initialization logic for the Hangman game
+    function init() {
+        // Correctly get a random word from the Set.
+        const wordsArray = Array.from(englishWords);
+        word = wordsArray[Math.floor(Math.random() * wordsArray.length)];
+
+        if (!word) {
+            document.getElementById("GameArea").innerHTML = "<h2>Failed to load a word. Please try again.</h2>";
+            return;
+        }
+        console.log("Starting Hangman with word:", word);
+        updateDisplay();
+    }
+
+    // Start the game by calling the initialization function.
+    init();
 }
 
