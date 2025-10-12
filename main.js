@@ -1,5 +1,5 @@
 const keys = ["67f", "67m","67t","BRf","BRm","ASf","ASm","MMf","MMm","R","DTf",
-    "DTm","MSf","MSm","TPf","TPm","BKf","BKm","TSf","TSm","EUf","EUm"];
+    "DTm","MSf","MSm","TPf","TPm","BKf","BKm","TSf","TSm","EUf","EUm","OFf","OFm"];
 const name = {
         "67f": "Hexacontaheptaphobia",
         "67m": "Hexacontaheptamania",
@@ -22,7 +22,9 @@ const name = {
         "TSf": "Tomatasausephobia",
         "TSm": "Tomatasausemania",
         "EUf": "Euphobia",
-        "EUm": "Eumania"
+        "EUm": "Eumania",
+        "OFf": "Osteofragphobia",
+        "OFm": "Osteofragmania"
     };
     const definition = {
         "67f": "An extreme or irrational fear of the number 67.",
@@ -46,7 +48,9 @@ const name = {
         "TSf": "Fear of ketchup",
         "TSm": "Obsession with ketchup",
         "EUf": "Fear of good things",
-        "EUm": "Obsession with good things"
+        "EUm": "Obsession with good things",
+        "OFf": "Fear of breaking bones",
+        "OFm": "Obsession with breaking bones"
     };
     const example = {
         "67f": "Her hexacontaheptaphobia made it difficult for her to stay in a hotel room numbered 67.",
@@ -70,7 +74,9 @@ const name = {
         "TSf": "Her tomatasausephobia made it hard for her to eat foods with ketchup.",
         "TSm": "His tomatasausemania led him to put ketchup on almost every meal.",
         "EUf": "Her euphobia made it difficult for her to accept compliments or positive feedback.",
-        "EUm": "His eumania led him to constantly seek out new experiences and opportunities for joy."
+        "EUm": "His eumania led him to constantly seek out new experiences and opportunities for joy.",
+        "OFf": "Her osteofragphobia made it hard for her to participate in contact sports.",
+        "OFm": "His osteofragmania led him to break every bone he had."
     };
     const partOfSpeech = {
         "67f": "Noun",
@@ -94,7 +100,9 @@ const name = {
         "TSf": "Noun",
         "TSm": "Noun",
         "EUf": "Noun",
-        "EUm": "Noun"
+        "EUm": "Noun",
+        "OFf": "Noun",
+        "OFm": "Noun"
     };
     const etymology = {
         "67f": "From Greek 'hexaconta' (sixty) + 'hepta' (seven) + 'phobia' (fear).",
@@ -118,7 +126,9 @@ const name = {
         "TSf": "From 'Tomatasause' (ketchup) + 'phobia' (fear).",
         "TSm": "From 'Tomatasause' (ketchup) + 'mania' (obsession).",
         "EUf": "From Greek 'eu' (good) + 'phobia' (fear).",
-        "EUm": "From Greek 'eu' (good) + 'mania' (obsession)."
+        "EUm": "From Greek 'eu' (good) + 'mania' (obsession).",
+        "OFf": "From Greek 'osteo' (bone) + 'frag' (break) + 'phobia' (fear).",
+        "OFm": "From Greek 'osteo' (bone) + 'frag' (break) + 'mania' (obsession)."
     };
     const prenounciation = {
         "67f": "Sound/67f.ogg",
@@ -142,7 +152,9 @@ const name = {
         "TSf": "Sound/TSf.ogg",
         "TSm": "Sound/TSm.ogg",
         "EUf": "Sound/EUf.ogg",
-        "EUm": "Sound/EUm.ogg"
+        "EUm": "Sound/EUm.ogg",
+        "OFf": "Sound/NAN.ogg",
+        "OFm": "Sound/NAN.ogg"
     };
     const Bookkeys = ["TAJ"];
     const Titles = {
