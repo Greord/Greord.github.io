@@ -174,7 +174,7 @@ const name = {
 
 function SearchPage(){
     document.getElementById("body").innerHTML = '<img class="corner-image" src="Images/back.png" alt="Search" width="88.5" height="74" onclick="location.href=\'index.html\'">' +
-    "<h1 style='text-align: center;' class='BlueBlock'>Search</h1>" +
+    "<h1 style='text-align: center;' class='Name'>Search</h1>" +
     "<br>" +
     "<input type='text' class='WordBlock' onkeyup='SearchFunction()' placeholder='Search for words..'>" +
     "<br><br>" +
@@ -219,7 +219,7 @@ function GeneratePage(key) {
         }
 
         document.getElementById("body").innerHTML = '<img class="corner-image" src="Images/back.png" alt="Search" width="88.5" height="74" onclick="location.href=\'search.html\'">'
-        +"<div class='BlueBlock'><h1 style='text-align: center;' id='name'>" 
+        +"<div class='Name'><h1 style='text-align: center;' id='name'>" 
         + Titles[key] 
         + "</h1>"
         + "<h2 class='WordBlock' id='author'>"
@@ -257,5 +257,4 @@ function GeneratePage(key) {
     + "</div>"
    ;
     }
-
 }
