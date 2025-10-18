@@ -67,6 +67,7 @@ const name = {
         "MIf": "Fear of mistakes",
         "MIm": "Obsession with mistakes",
         "TNf": "Fear of AI",
+        "TNm": "Obsession with AI"
     };
     const example = {
         "67f": "Her hexacontaheptaphobia made it difficult for her to stay in a hotel room numbered 67.",
