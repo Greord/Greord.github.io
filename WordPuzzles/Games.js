@@ -1,5 +1,9 @@
 // A variable to hold our word set once loaded
 let englishWords;
+var CurrentEquation = '';
+var EquationTimer = 0;
+var GameBoard = [];
+var EquicktionsScore = 0;
 
 async function loadWordList() {
   try {
@@ -56,6 +60,15 @@ function getRandomWord() {
   // Return the word at the random index
   return englishWords[randomIndex];
 }
+function RI(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Example: Get a random integer between 1 and 10 (inclusive)
+let randomNumberInclusive = getRandomIntInclusive(1, 10);
+console.log(randomNumberInclusive);
 
 let UsedWords = [];
 let Timer = 10;
@@ -79,6 +92,11 @@ function SubmitWord() {
 
 function GameStart(GameType) {
     document.getElementById("startbutton").style.display = "none";
+    document.getElementById("startbutton").id = "oldstartbutton";
+    document.getElementById("startbutton").style.display = "none";
+    document.getElementById("startbutton").id = "oldstartbutton";
+    document.getElementById("startbutton").style.display = "none";
+    document.getElementById("startbutton").id = "oldstartbutton";
   console.log("Game Started");
   if (GameType === "Speed Vocab") {
     document.getElementById("GameArea").innerHTML = `
@@ -107,6 +125,10 @@ function GameStart(GameType) {
   }
   else if (GameType === "Hangman"){
     Hangman();
+  }
+  else if (GameType === "Equicktions"){
+    window.eQUICKtions();
+    console.log("Equicktions started");
   }
 }
 // Hangman Game Logic
@@ -197,3 +219,114 @@ function Hangman() {
     init();
 }
 
+// --- eQUICKtions Game Logic ---
+
+// Function RI and global variables are fine as is, but we'll put the 
+// function declaration above the call site for clarity.
+
+
+function eQUICKtions() {
+    if (window.GameBoard.length === 0) { 
+        window.GameBoard = [
+            RI(0,100), RI(0,100), RI(0,100),
+            RI(0,100), RI(0,100), RI(0,100),
+            RI(0,100), RI(0,100), RI(0,100)
+        ];
+    }
+    
+    function Update(){
+      console.log('Updating eQUICKtions display');
+    document.getElementById("GameArea").innerHTML = `
+    <div class='EquationDisplay'>${CurrentEquation}</div>
+    <div class='EquationDisplay'>${EquationTimer}</div>
+    <div class='EquationDisplay'>${EquicktionsScore}</div>
+    <div class='eQUICKtionsGrid'>
+        <div class='eQUICKtionsCellTop' onclick='window.CurrentEquation += window.GameBoard[0];window.UpdateEquation();'>${GameBoard[0]}</div>
+        <div class='eQUICKtionsCellTop' onclick='window.CurrentEquation += window.GameBoard[1];window.UpdateEquation();'>${GameBoard[1]}</div>
+        <div class='eQUICKtionsCellTop' onclick='window.CurrentEquation += window.GameBoard[2];window.UpdateEquation();'>${GameBoard[2]}</div>
+        <br>
+        <br>
+        <div class='eQUICKtionsCellMid' onclick='window.CurrentEquation += window.GameBoard[3];window.UpdateEquation();'>${GameBoard[3]}</div>
+        <div class='eQUICKtionsCellMid' onclick='window.CurrentEquation += window.GameBoard[4];window.UpdateEquation();'>${GameBoard[4]}</div>
+        <div class='eQUICKtionsCellMid' onclick='window.CurrentEquation += window.GameBoard[5];window.UpdateEquation();'>${GameBoard[5]}</div>
+        <br>
+        <br>
+        <div class='eQUICKtionsCellBot' onclick='window.CurrentEquation += window.GameBoard[6];window.UpdateEquation();'>${GameBoard[6]}</div>
+        <div class='eQUICKtionsCellBot' onclick='window.CurrentEquation += window.GameBoard[7];window.UpdateEquation();'>${GameBoard[7]}</div>
+        <div class='eQUICKtionsCellBot' onclick='window.CurrentEquation += window.GameBoard[8];window.UpdateEquation();'>${GameBoard[8]}</div>
+    </div>
+    <div class='OperationInput> 
+    <button class='button'></button>
+    <br>
+    <button class='button' onclick="window.CurrentEquation += '+';window.UpdateEquation();">+</button>
+    <br>
+    <button class='button' onclick="window.CurrentEquation += '-';window.UpdateEquation();">-</button>
+    <br>
+    <button class='button' onclick="window.CurrentEquation += '*';window.UpdateEquation();">*</button>
+    <br>
+    <button class='button' onclick="window.CurrentEquation += '/';window.UpdateEquation();">/</button>
+    <br>
+    <button class='button' onclick="window.CurrentEquation += '=';window.UpdateEquation();">=</button>
+    <br>
+    <button class='button' onclick="window.CurrentEquation = '';window.UpdateEquation();">Clear</button>
+    </div>
+    <button class="button" onclick="window.SubmitEquation()">Submit</button>
+    `;
+  };
+  window.UpdateEquation = Update;
+  EquationTimer = 60;
+    function EquationTimerTick(){
+      EquationTimer -= 1;
+      Update();
+      if (EquationTimer <= 0){
+        document.getElementById("GameArea").innerHTML = `<h2>Game Over! Your score: ${EquicktionsScore}</h2><br><button style='text-align:center;' class="button" onclick="window.location.reload('WordPuzzles/Games.html');">Play Again</button>`;
+        clearInterval(EquationInterval);
+      };
+    };
+    const EquationInterval = setInterval(EquationTimerTick, 1000);
+  Update();
+  function SubmitEquation() {
+      if (CurrentEquation.length <= 3) {
+        alert("Equation too short!");
+        return;
+      };
+        Newcard(1);
+        Newcard(2);
+        Newcard(3);
+        Newcard(4);
+        Newcard(5);
+        Newcard(6);
+        Newcard(7);
+        Newcard(8);
+        Newcard(0);
+        // Evaluate the equation here
+        try {
+            const parts = window.CurrentEquation.split('=');
+            if (parts.length !== 2) {
+                alert("Invalid equation format. Please use '=' to separate the expression and the result.");
+                return;
+            }
+            const expression = parts[0];
+            const result = parseFloat(parts[1]);
+            const evaluatedResult = eval(expression);
+            if (evaluatedResult === result) {
+                alert("Correct!");
+                EquicktionsScore += 1;
+                EquationTimer += 30;
+            } else {
+                alert(`Incorrect. The correct result is ${evaluatedResult}`);
+            }
+            window.CurrentEquation = '';
+            Update();
+  }
+        catch (error) {
+            alert("Error evaluating equation: " + error.message);
+        }
+  };
+  window.SubmitEquation = SubmitEquation;
+  function Newcard(index) {
+        window.GameBoard[index] = RI(0,100);
+        Update();
+  };
+  window.Newcard = Newcard;
+} // end of eQUICKtions function
