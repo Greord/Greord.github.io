@@ -82,3 +82,52 @@ body {
     font-family: sans-serif; /* Example font */
     font-size: large;
 }
+
+
+
+.eQUICKtionsCellTop {
+    background-color: #ffd700; /* Gold color for top cells */
+    color: #000000; /* Text color */
+    padding: 10px 20px; /* Spacing inside the button */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline from the link */
+    border-radius: 5px; /* Add rounded corners */
+    display: inline-block; /* Allows padding and other box model properties */
+    font-family: sans-serif; /* Example font */
+    font-size: large;
+}
+
+.eQUICKtionsCellMid {
+    background-color: #ffa500; /* Orange color for middle cells */
+    color: #000000; /* Text color */
+    padding: 10px 20px; /* Spacing inside the button */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline from the link */
+    border-radius: 5px; /* Add rounded corners */
+    display: inline-block; /* Allows padding and other box model properties */
+    font-family: sans-serif; /* Example font */
+    font-size: large;
+}
+
+.eQUICKtionsCellBot {
+    background-color: #ff4500; /* Red-Orange color for bottom cells */
+    color: #000000; /* Text color */
+    padding: 10px 20px; /* Spacing inside the button */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline from the link */
+    border-radius: 5px; /* Add rounded corners */
+    display: inline-block; /* Allows padding and other box model properties */
+    font-family: sans-serif; /* Example font */
+    font-size: large;
+}
+.EquationDisplay {
+    background-color: #ffffff; /* White background for the display area */
+    color: #000000; /* Text color */
+    padding: 10px 20px; /* Spacing inside the button */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline from the link */
+    border-radius: 5px; /* Add rounded corners */
+    display: inline-block; /* Allows padding and other box model properties */
+    font-family: sans-serif; /* Example font */
+    font-size: large;
+}
