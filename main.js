@@ -1,6 +1,6 @@
 const keys = ["67f", "67m","67t","BRf","BRm","ASf","ASm","MMf","MMm","R","DTf",
     "DTm","MSf","MSm","TPf","TPm","BKf","BKm","TSf","TSm","EUf","EUm","OFf","OFm","PGf","PGm",
-    "MLf","MLm","MIf","MIm","TNf","TNm"];
+    "MLf","MLm","MIf","MIm","TNf","TNm","APf","APm"];
 const name = {
         "67f": "Hexacontaheptaphobia",
         "67m": "Hexacontaheptamania",
@@ -33,7 +33,9 @@ const name = {
         "MIf": "Misphobia",
         "MIm": "Mismania",
         "TNf": "Technitosnoemonphobia",
-        "TNm": "Technitosnoemonmania"
+        "TNm": "Technitosnoemonmania",
+        "APf": "Aspazomaiphobia",
+        "APm": "Aspazomaimania"
     };
     const definition = {
         "67f": "An extreme or irrational fear of the number 67.",
@@ -67,7 +69,9 @@ const name = {
         "MIf": "Fear of mistakes",
         "MIm": "Obsession with mistakes",
         "TNf": "Fear of AI",
-        "TNm": "Obsession with AI"
+        "TNm": "Obsession with AI",
+        "APf": "Fear of greetings",
+        "APm": "Obsesstion of greeting"
     };
     const example = {
         "67f": "Her hexacontaheptaphobia made it difficult for her to stay in a hotel room numbered 67.",
@@ -101,7 +105,9 @@ const name = {
         "MIf": "Her misphobia made it hard for her to complete tasks without double-checking.",
         "MIm": "His mismania led him to obsess over every mistake he made.",
         "TNf": "Her technitosnoemonphobia made it hard for her to watch AI advance.",
-        "TNm": "His technitosnoemonmania led him to use AI daily."
+        "TNm": "His technitosnoemonmania led him to use AI daily.",
+        "APf": "His aspazomaiphobia made it hard for him to meet people.",
+        "APm": "His aspazomaiphobia led him to obsess over every greeting he recived."
     };
     const partOfSpeech = {
         "67f": "Noun",
@@ -135,7 +141,9 @@ const name = {
         "MIf": "Noun",
         "MIm": "Noun",
         "TNf": "Noun",
-        "TNm": "Noun"
+        "TNm": "Noun",
+        "APf": "Noun",
+        "APm": "Noun"
     };
     const etymology = {
         "67f": "From Greek 'hexaconta' (sixty) + 'hepta' (seven) + 'phobia' (fear).",
@@ -169,7 +177,9 @@ const name = {
         "MIf": "From Greek 'mis' (wrong) + 'phobia' (fear).",
         "MIm": "From Greek 'mis' (wrong) + 'mania' (obsession).",
         "TNf": "From Greek 'tecnitos' (artifical) + 'noemon' (mind) + 'phobia' (fear).",
-        "TNm": "From Greek 'tecnitos' (artifical) + 'noemon' (mind) + 'mania' (obsession)."
+        "TNm": "From Greek 'tecnitos' (artifical) + 'noemon' (mind) + 'mania' (obsession).",
+        "APf": "From Greek 'aspazomai'(greeting) + 'phobia' (fear).",
+        "APm": "From Greek 'aspazomai'(greeting) + 'mania' (obsession)."
     };
     const prenounciation = {
         "67f": "Sound/67f.ogg",
@@ -203,7 +213,9 @@ const name = {
         "MIf": "Sound/NAN.ogg",
         "MIm": "Sound/NAN.ogg",
         "TNf": "Sound/NAN.ogg",
-        "TNm": "Sound/NAN.ogg"
+        "TNm": "Sound/NAN.ogg",
+        "APf": "Sound/NAN.ogg",
+        "APm": "Sound/NAN.ogg"
     };
     const Bookkeys = ["TAJ"];
     const Titles = {
