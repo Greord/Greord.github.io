@@ -18,6 +18,17 @@ body {
   background-color: #18c286; /* Light background color */
 }
 
+.title{
+    background-color: #1304ef; /* Button background color */
+    color: #f0f0f0; /* Text color */
+    padding: 10px 20px; /* Spacing inside the button */
+    text-decoration: none; /* Remove underline from the link */
+    border-radius: 5px; /* Add rounded corners */
+    display: inline-block; /* Allows padding and other box model properties */
+    font-family: sans-serif; /* Example font */
+    justify-content: center;
+}
+
 .WordBlock {
     background-color: #16b304; /* Button background color */
     color: #f0f0f0; /* Text color */
@@ -41,10 +52,10 @@ body {
 
 
 
-.corner-image {
+.corner {
   position: fixed; /* Positions the image relative to the viewport */
-  top: 10;       /* Align to the bottom edge of the screen */
-  right: 0;        /* Align to the right edge of the screen */
+  top: 10px;       /* Align to the bottom edge of the screen */
+  right: 0px;        /* Align to the right edge of the screen */
   z-index: 100;    /* Ensure the image appears on top of other content */
 }
 
