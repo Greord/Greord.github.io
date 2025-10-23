@@ -231,8 +231,60 @@ const name = {
         "TAJ": [1, "Images/Tim_And_Joe/PG1.png"]
     };
 
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for(let i=0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+// limited time event 
+function RI(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function Halloween() {
+    let rollsValue = parseInt(getCookie('Rolls') || '0', 10);
+    let freeRoll = getCookie("freeRoll")
+    if (rollsValue <= 0) {
+        if (freeRoll != "TRUE") {
+        document.cookie = `Rolls=1; path=/;`
+        document.cookie = `freeRoll=TRUE; path=/;`
+        rollsValue = 1;
+        }  
+    }
+    document.getElementById("RollArea").innerHTML = `<h1>Rolls: ${rollsValue}</h1><br>
+    <img src='Images/HalloweenEvent/Roll.jpg' width=200 hight=300 alt='Click to roll'; onclick='window.Roll()'>`
+    function Roll(){
+        if (rollsValue > 0) {
+            rollsValue -= 1;
+            document.cookie = `Rolls=${rollsValue}; path=/;`
+            document.getElementById("RollArea").innerHTML = `<h1>Rolls: ${rollsValue}</h1><br>
+            <img src='Images/HalloweenEvent/Roll.jpg' width=200 hight=300 alt='Click to roll'; onclick='window.Roll()'>`
+            let Chance = RI(0,10000);
+            if (Chance >= 0 && Chance <= 20){
+                let answer = window.prompt("You got a Jumping Jack o' Lantern. Do you want to use it?", "type YES or NO");
+                if (answer === "YES"){
+                    document.cookie = `JJOL=1; path=/;`
+                    document.cookie = `PW=0; path=/;`
+                }
+            }
+            if (Chance === 45){
+                let answer = window.prompt("You got a Pickle Wart. Do you want to use it?", "type YES or NO");
+                if (answer === "YES"){
+                    document.cookie = `PW=1; path=/;`
+                    document.cookie = `JJOL=0; path=/;`
+                }
+            }
+        }
+    }
+    window.Roll = Roll;
+}
 
 
+// code for pages
 function SearchPage(){
     document.getElementById("body").innerHTML = '<img class="corner-image" src="Images/back.png" alt="Search" width="88.5" height="74" onclick="location.href=\'index.html\'">' +
     "<div style='text-align:center;'>" +
@@ -251,8 +303,8 @@ function SearchPage(){
     "<br>" +
     "<ul id='wordlist'>" +
     Bookkeys.map(key => "<li><a class='button' href='word.html?key=" + key + "'>" + Titles[key] + "</a></li><br>").join('') +
-    "</ul>";
-    ;
+    "</ul>"
+    + '<div id="EventCorner"></div>';
 }
 
 
@@ -295,6 +347,7 @@ function GeneratePage(key) {
         + "</h3>"
         + "</div><br>" 
         + BookHTML;
+        + '<div id="EventCorner"></div>'
     } else {
     document.getElementById("body").innerHTML = '<img class="corner-image" src="Images/back.png" alt="Search" width="88.5" height="74" onclick="location.href=\'search.html\'">'
     +"<div class='title'><h1 style='text-align: center;' id='name'>" 
@@ -320,6 +373,17 @@ function GeneratePage(key) {
     + "<br><br><div class='WordBlock'><h2 id='pronounciationhead'>Pronounciation</h2>"
     + "<audio controls><source src='" + prenounciation[key] + "' type='audio/ogg'>Your browser does not support the audio element.</audio>"
     + "</div>"
+    + '<div id="EventCorner"></div>'
    ;
     }
 }
+
+
+
+
+
+function Dev(){
+    
+}
+
+

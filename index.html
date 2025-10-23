@@ -5,6 +5,7 @@
     <link rel="icon" type="image/x-icon" href="Images/Favicon.ico">
     <link rel="stylesheet" href="style.css"> 
     <script src="main.js"></script>
+    <meta name="description" content="Links to many parts of Greord">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5TP29KP3X"></script>
@@ -17,6 +18,7 @@
 </script>
 <body>
     <img class="corner-image" src="Images/Search.png" alt="Search" width="88.5" height="74" onclick="location.href='search.html'">
+    <img class="Halloween-Image" src="Images/HalloweenEvent/Button.jpg" alt="Search" width="200" height="200" onclick="location.href='event.html'">
     <div style="text-align: center;">
     <h1 class="title" id="title">Greord</h1>
     <div style="text-align: left;">
@@ -32,8 +34,32 @@
     <h2 style="text-align: left;" id="Gameshead">Games</h2>
     <p style="text-align: left;"id="games">Check out our new games corner <a class="button" href="WordPuzzles/Games.html">Click for Puzzles</a></p>
     </div>
+    <div id="EventCorner">
+    </div>
 </body>
-
+<script>
+    function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for(let i=0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+let PWVALUE = getCookie('PW')
+let JJOLVALUE = getCookie('JJOL')
+console.log(JJOLVALUE)
+if (PWVALUE === '1'){
+    console.log('Player Has PW')
+    document.getElementById('EventCorner').innerHTML = `<img src="Images/HalloweenEvent/Pickle Wart.jpg" alt="Pickle Wart' Lantern" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+}
+if (JJOLVALUE === '1'){
+    console.log("Player Has JJOL")
+    document.getElementById('EventCorner').innerHTML = `<img src="Images/HalloweenEvent/Jumping Jack o' Lantern.jpg" alt="Jumping Jack o' Lantern" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+}
+</script>
 
 
 

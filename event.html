@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Greord - Set Creator</title>
-        <link rel="icon" type="image/x-icon" href="Images/Favicon.ico">
-        <script scr="setcreator.js"></script>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <!-- Google tag (gtag.js) -->
+<html lang="en">
+<head>
+    <title>Greord</title>
+    <link rel="icon" type="image/x-icon" href="Images/Favicon.ico">
+    <link rel="stylesheet" href="style.css"> 
+    <script src="main.js"></script>
+</head>
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5TP29KP3X"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -15,10 +15,18 @@
 
   gtag('config', 'G-B5TP29KP3X');
 </script>
-    <body>
+<body style="background-image: linear-gradient(to right, orange, rgb(255, 255, 255), rgb(255, 174, 0));">
+    <h1 style="color: transparent; background-image: linear-gradient(to left, orange, black); background-clip: text; background-size: 10px; font-size: 60px; text-align: center;">Halloween Special</h1>
+    <p style="color: transparent; background-image: linear-gradient(to left, orange, black); background-clip: text; background-size: 10px; font-size: 20px; text-align: center;">For halloween, playing games gives you rolls. Then come here to use your rolls. Each Roll Has A CHANCE of giving you a special halloween buddy in the bottom right corner.</p>
 
-    </body>
-   <script>
+    <div style="text-align: center;" id="RollArea">
+        
+    </div>
+    <script>Halloween();</script>
+    <div id="EventCorner">
+    </div>
+</body>
+<script>
     function getCookie(name) {
   const nameEQ = name + "=";
   const ca = document.cookie.split(';');

@@ -5,6 +5,7 @@
     <link rel="icon" type="image/x-icon" href="Images/Favicon.ico">
     <script src="main.js"></script>
     <link rel="stylesheet" href="style.css">
+    <meta name="description" content="View words">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5TP29KP3X"></script>
@@ -19,9 +20,28 @@
 
 </body>
 <script>
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const key = urlParams.get('key');
-    GeneratePage(key);
+  const Params = new URLSearchParams(window.location.search);
+  const key = Params.get("key")
+  GeneratePage(key);
+</script>
+<script>
+    function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for(let i=0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+let PWVALUE = getCookie('PW')
+let JJOLVALUE = getCookie('JJOL')
+if (PWVALUE === 1){
+    document.getElementById('EventCorner').innerHTML = `<img scr="Images/HalloweenEvent/Pickle Wart.jpg" style='position:fixed; bottom:10; right:0;'>`
+}
+if (JJOLVALUE === 1){
+    document.getElementById('EventCorner').innerHTML = `<img scr="Images/HalloweenEvent/Jumping Jack o' Lantern.jpg" style='position:fixed; bottom:10; right:0;'>`
+}
 </script>
 </html>
