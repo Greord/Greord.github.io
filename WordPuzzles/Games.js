@@ -4,6 +4,7 @@ var CurrentEquation = '';
 var EquationTimer = 0;
 var GameBoard = [];
 var EquicktionsScore = 0;
+window.ISINQUESTION = true;
 
 async function loadWordList() {
     try {
@@ -104,6 +105,13 @@ function GameStart(GameType) {
     } else if (GameType === "Equicktions") {
         eQUICKtions();
         console.log("Equicktions started");
+    } else if (GameType === "Study"){
+        let SearchParams = new URLSearchParams(window.location.search);
+        if (SearchParams.has("set")){
+            StudyMode();
+        }else{
+            alert("You Need a Question Set for this gamemode.")
+        }
     }
 }
 // Hangman Game Logic
@@ -253,4 +261,109 @@ function eQUICKtions() {
     window.Update = Update;
 
     Update(); // Initial call to draw the game
+}
+
+function ImportSet(SetString){
+    let QS = SetString.split(";;");
+    for (i=0; i < QS.length; i++){
+        QS[i] = QS[i].split("**");
+        QS[i].pop();
+    }
+    QS.pop();
+    console.log(QS);
+    return QS;
+}
+
+
+function ShowQuestion(){
+    let Question;
+    const SearchParams = new URLSearchParams(window.location.search);
+    const QuestionString = SearchParams.get('set');
+    const QuestionSet = ImportSet(QuestionString);
+    function Show(){
+        try{
+    Question = QuestionSet[RI(0,QuestionSet.length)]
+    document.getElementById("GameArea").innerHTML = `
+        <div id="Question" type="text" class="WordBlock" style="padding: 100px; font-size: large;">
+          ${Question[0]}
+        </div>
+        <br>
+        <button id="A1" type="text" class="BlueBlock" onclick="window.Click('A1')" style="padding: 25px; font-size: medium; margin: 15px;">
+          ${Question[1]}
+        </button>
+        <button id="A2" type="text" class="BlueBlock" onclick="window.Click('A2')" style="padding: 25px; font-size: medium; margin: 15px;">
+          ${Question[2]}
+        </button>
+        <br>
+        <button id="A3" type="text" class="BlueBlock" onclick="window.Click('A3')" style="padding: 25px; font-size: medium; margin: 15px;">
+          ${Question[3]}
+        </button>
+        <button id="A4" type="text" class="BlueBlock" onclick="window.Click('A4')" style="padding: 25px; font-size: medium; margin: 15px;">
+          ${Question[4]}
+        </button>
+    `}catch(error){
+        Show();
+    }}
+    Show();
+    function Correct(){
+        console.log("correct");
+        window.ISINQUESTION = false;
+        document.getElementById("GameArea").innerHTML = "<h1>Loading...</h1>"
+    }
+    function Incorrect(){
+        Show();
+    }
+    function Click(string){
+        if (string === "A1"){
+            if (Question[5] === "true"){
+                Correct();
+            }else{
+                Incorrect();
+            }
+        }
+        if (string === "A2"){
+            if (Question[6] === "true"){
+                Correct();
+            }else{
+                Incorrect();
+            }
+        }
+        if (string === "A3"){
+            if (Question[7] === "true"){
+                Correct();
+            }else{
+                Incorrect();
+            }
+        }
+        if (string === "A4"){
+            if (Question[8] === "true"){
+                Correct();
+            }else{
+                Incorrect();
+            }
+        }
+    }
+    window.Click = Click;
+}
+
+function StudyMode(){
+    let Score = 0;
+    function CorrectAnswer(){
+        Score++
+        document.getElementById("GameArea").innerHTML = `<h1 class='BlueBlock'>Score:${Score}</h1>`;
+        setTimeout(ShowQuestion, 2000);
+        window.ISINQUESTION = true;
+        interval = setInterval(Check, 100)
+    }
+    function Check(){
+        console.log("Checking")
+        if (window.ISINQUESTION === false){
+            
+            console.log("Found True")
+            clearInterval(interval)
+            CorrectAnswer();
+        }
+    }
+    let interval = setInterval(Check, 100)
+    ShowQuestion();
 }
