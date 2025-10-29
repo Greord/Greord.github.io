@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Greord</title>
+    <link rel="icon" type="image/x-icon" href="Images/Favicon.ico">
+    <script src="setcreator.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="View words">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B5TP29KP3X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B5TP29KP3X');
+</script>
+<body id="body">
+    <h1 class="WordBlock" style="text-align: center;">All About Sets</h1>
+    <br><br>
+    <p style="text-align: left;" class="BlueBlock">Sets are used for some games.
+    <br><br>You can make sets at <a class="WordBlock" href="setcreator.html">our set creation tool.</a></p>
+    <div id="Featured">
+    <div id="EventCorner">
+</body>
+<script>
+    function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for(let i=0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+let PWVALUE = getCookie('PW')
+let JJOLVALUE = getCookie('JJOL')
+if (PWVALUE === 1){
+    document.getElementById('EventCorner').innerHTML = `<img scr="Images/HalloweenEvent/Pickle Wart.jpg" style='position:fixed; bottom:10; right:0;'>`
+}
+if (JJOLVALUE === 1){
+    document.getElementById('EventCorner').innerHTML = `<img scr="Images/HalloweenEvent/Jumping Jack o' Lantern.jpg" style='position:fixed; bottom:10; right:0;'>`
+}
+</script>
+</html>

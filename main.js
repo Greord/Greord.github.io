@@ -1,6 +1,6 @@
 const keys = ["67f", "67m","67t","BRf","BRm","ASf","ASm","MMf","MMm","R","DTf",
     "DTm","MSf","MSm","TPf","TPm","BKf","BKm","TSf","TSm","EUf","EUm","OFf","OFm","PGf","PGm",
-    "MLf","MLm","MIf","MIm","TNf","TNm","APf","APm"];
+    "MLf","MLm","MIf","MIm","TNf","TNm","APf","APm","KLf","KLm","RZf","RZm"];
 const name = {
         "67f": "Hexacontaheptaphobia",
         "67m": "Hexacontaheptamania",
@@ -35,7 +35,11 @@ const name = {
         "TNf": "Technitosnoemonphobia",
         "TNm": "Technitosnoemonmania",
         "APf": "Aspazomaiphobia",
-        "APm": "Aspazomaimania"
+        "APm": "Aspazomaimania",
+        "KLf": "Klaolampasphobia",
+        "KLm": "Klaolampasmania",
+        "RZf": "Rozzphobia",
+        "RZm": "Rozzmania"
     };
     const definition = {
         "67f": "An extreme or irrational fear of the number 67.",
@@ -71,7 +75,11 @@ const name = {
         "TNf": "Fear of AI",
         "TNm": "Obsession with AI",
         "APf": "Fear of greetings",
-        "APm": "Obsesstion of greeting"
+        "APm": "Obsesstion of greeting",
+        "KLf": "Fear of knocking over lamps",
+        "KLm": "Obsession of knocking over lamps",
+        "RZf": "Fear of color pink",
+        "RZm": "Obsession of color pink"
     };
     const example = {
         "67f": "Her hexacontaheptaphobia made it difficult for her to stay in a hotel room numbered 67.",
@@ -107,7 +115,11 @@ const name = {
         "TNf": "Her technitosnoemonphobia made it hard for her to watch AI advance.",
         "TNm": "His technitosnoemonmania led him to use AI daily.",
         "APf": "His aspazomaiphobia made it hard for him to meet people.",
-        "APm": "His aspazomaiphobia led him to obsess over every greeting he recived."
+        "APm": "His aspazomaiphobia led him to obsess over every greeting he recived.",
+        "KLf": "His klaolampasphobia led him to be very carefull around lamps.",
+        "KLm": "His klaolampasmania led him to destroy lamps all the time.",
+        "RZf": "His rozphobia made it hard for him to be near pink objects.",
+        "RZm": "Her rozmania led her to collect everything pink."
     };
     const partOfSpeech = {
         "67f": "Noun",
@@ -143,7 +155,11 @@ const name = {
         "TNf": "Noun",
         "TNm": "Noun",
         "APf": "Noun",
-        "APm": "Noun"
+        "APm": "Noun",
+        "KLf": "Noun",
+        "KLm": "Noun",
+        "RZf": "Noun",
+        "RZm": "Noun"
     };
     const etymology = {
         "67f": "From Greek 'hexaconta' (sixty) + 'hepta' (seven) + 'phobia' (fear).",
@@ -179,7 +195,11 @@ const name = {
         "TNf": "From Greek 'tecnitos' (artifical) + 'noemon' (mind) + 'phobia' (fear).",
         "TNm": "From Greek 'tecnitos' (artifical) + 'noemon' (mind) + 'mania' (obsession).",
         "APf": "From Greek 'aspazomai'(greeting) + 'phobia' (fear).",
-        "APm": "From Greek 'aspazomai'(greeting) + 'mania' (obsession)."
+        "APm": "From Greek 'aspazomai'(greeting) + 'mania' (obsession).",
+        "KLf": "From Greek 'klao'(break) + 'lampas'(lamps) + 'phobia'(fear)",
+        "KLm": "From Greek 'klao'(break) + 'lampas'(lamps) + 'mania'(obbsession)",
+        "RZf": "From 'Roz' (pink) + 'Phobia' (Fear)",
+        "RZm": "From 'Roz' (pink) + 'Mania' (Obsession)"
     };
     const prenounciation = {
         "67f": "Sound/67f.ogg",
@@ -215,20 +235,28 @@ const name = {
         "TNf": "Sound/NAN.ogg",
         "TNm": "Sound/NAN.ogg",
         "APf": "Sound/NAN.ogg",
-        "APm": "Sound/NAN.ogg"
+        "APm": "Sound/NAN.ogg",
+        "KLf": "Sound/NAN.ogg",
+        "KLm": "Sound/NAN.ogg",
+        "RZm": "Sound/NAN.ogg",
+        "RZf": "Sound/NAN.ogg"
     };
-    const Bookkeys = ["TAJ"];
+    const Bookkeys = ["TAJ","TLWIH"];
     const Titles = {
-        "TAJ": "Tim and Joe"
+        "TAJ": "Tim and Joe",
+        "TLWIH": "The Longest Words in History"
     };
     const Authors = {
-        "TAJ": "Xavier Zeppuhar"
+        "TAJ": "Xavier Zeppuhar",
+        "TLWIH": "Bryant W. and Nilabh K."
     };
     const Generes = {
-        "TAJ": "Realistic Fiction"
+        "TAJ": "Realistic Fiction",
+        "TLWIH": "Non-Fiction - Academic/Research"
     };
     const Pages = {
-        "TAJ": [1, "Images/Tim_And_Joe/PG1.png"]
+        "TAJ": [1, "Images/Tim_And_Joe/PG1.png"],
+        "TLWIH": [14, "Images/TLWIH/PG1.png","Images/TLWIH/PG2.png","Images/TLWIH/PG3.png","Images/TLWIH/PG4.png","Images/TLWIH/PG5.png","Images/TLWIH/PG6.png","Images/TLWIH/PG7.png","Images/TLWIH/PG8.png","Images/TLWIH/PG9.png","Images/TLWIH/PG10.png","Images/TLWIH/PG11.png","Images/TLWIH/PG12.png","Images/TLWIH/PG13.png","Images/TLWIH/PG15.png"]
     };
 
 function getCookie(name) {
@@ -379,11 +407,5 @@ function GeneratePage(key) {
 }
 
 
-
-
-
-function Dev(){
-    
-}
 
 

@@ -3,7 +3,7 @@
     <head>
         <title>Greord - Set Creator</title>
         <link rel="icon" type="image/x-icon" href="Images/Favicon.ico">
-        <script scr="setcreator.js"></script>
+        <script src="setcreator.js"></script>
         <link rel="stylesheet" href="style.css">
     </head>
     <!-- Google tag (gtag.js) -->
@@ -15,8 +15,26 @@
 
   gtag('config', 'G-B5TP29KP3X');
 </script>
-    <body>
-
+    <body style="text-align: center;" id="body">
+        <h1 class="title">Set Creator</h1>
+        <br>
+        <br>
+        <input id="Question" type="text" class="WordBlock" style="padding: 100px; font-size: large;" placeholder="Add your question here.">
+        <br>
+        <input id="IsA1Correct" type="checkbox" style="scale: 4;">
+        <input id="A1" type="text" class="BlueBlock" style="padding: 25px; font-size: medium; margin: 15px;" placeholder="Add your 1st answer here.">
+        <input id="A2" type="text" class="BlueBlock" style="padding: 25px; font-size: medium; margin: 15px;" placeholder="Add your 2nd answer here.">
+        <input id="IsA2Correct" type="checkbox" style="scale: 4;">
+        <br>
+        <input id="IsA3Correct" type="checkbox" style="scale: 4;">
+        <input id="A3" type="text" class="BlueBlock" style="padding: 25px; font-size: medium; margin: 15px;" placeholder="Add your 3rd answer here.">
+        <input id="A4" type="text" class="BlueBlock" style="padding: 25px; font-size: medium; margin: 15px;" placeholder="Add your 4th answer here.">
+        <input id="IsA4Correct" type="checkbox" style="scale: 4;">
+        <br><br>
+        <button class="WordBlockWithHover" onclick="NextQuestion();">Go to next Question</button>
+        <br>
+        <button class="WordBlockWithHover" onclick="ExportSet();">Export Current Set</button>
+        <div id="EventCorner">
     </body>
    <script>
     function getCookie(name) {
