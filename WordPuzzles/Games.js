@@ -78,7 +78,7 @@ function GameStart(GameType) {
         document.getElementById("GameArea").innerHTML = `
             <div class='Timer' id="Timer">Time: ${Timer}</div>
             <div class='Score' id="Score">Score: ${Score}</div>
-            <input class='Input' type="text" id="UserInput" placeholder="Type the word here" />
+            <input class='Input' onpaste="return false;" ondrop="return false;" type="text" id="UserInput" placeholder="Type the word here" />
         `;
 
         const userInputElement = document.getElementById("UserInput");
@@ -354,6 +354,31 @@ function StudyMode(){
         setTimeout(ShowQuestion, 2000);
         window.ISINQUESTION = true;
         interval = setInterval(Check, 100)
+    }
+    function Check(){
+        console.log("Checking")
+        if (window.ISINQUESTION === false){
+            
+            console.log("Found True")
+            clearInterval(interval)
+            CorrectAnswer();
+        }
+    }
+    let interval = setInterval(Check, 100)
+    ShowQuestion();
+}
+
+function QuestForWood(){
+    function Game(){
+        
+        ShowQuestion();
+        window.ISINQUESTION = true;
+        interval = setInterval(Check, 100)
+    }
+    let Score = 0;
+    function CorrectAnswer(){
+        Score++
+        Game();
     }
     function Check(){
         console.log("Checking")
