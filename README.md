@@ -1,4 +1,8 @@
 # Audit Log
+## Update C
+- Removed the Halloween Event
+- Added the Thanksgiving Event
+- Copy and Paste disabled for speed vocab.
 ## Update B
 - Added Study Mode
 - Added Set Creation
