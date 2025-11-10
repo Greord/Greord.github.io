@@ -15,9 +15,11 @@
 
   gtag('config', 'G-B5TP29KP3X');
 </script>
-<body style="background-image: linear-gradient(to right, orange, rgb(255, 255, 255), rgb(255, 174, 0));">
-    <h1 style="color: transparent; background-image: linear-gradient(to left, orange, black); background-clip: text; background-size: 10px; font-size: 60px; text-align: center;">Halloween Special</h1>
-    <p style="color: transparent; background-image: linear-gradient(to left, orange, black); background-clip: text; background-size: 10px; font-size: 20px; text-align: center;">For halloween, playing games gives you rolls. Then come here to use your rolls. Each Roll Has A CHANCE of giving you a special halloween buddy in the bottom right corner.</p>
+<body style="background-image: linear-gradient(to right, rgb(221, 189, 11), rgb(255, 0, 0), rgb(221, 74, 21));">
+    <h1 style="color: transparent; background-image: linear-gradient(to left, rgb(139, 94, 12), rgb(167, 10, 10)); background-clip: text; background-size: 10px; font-size: 60px; text-align: center;">Thanksgiving Special</h1>
+    <p style="color: transparent; background-image: linear-gradient(to left, rgb(104, 70, 6), rgb(143, 0, 0)); background-clip: text; background-size: 10px; font-size: 20px; text-align: center;">For thanksgiving, playing games gives you rolls. Then come here to use your rolls. Each Roll Has A CHANCE of giving you a special turkey buddy in the bottom right corner.</p>
+    <h3>Auto-Roll</h3>
+    <input id="Auto" type="checkbox" style="scale: 4;">
 
     <div style="text-align: center;" id="RollArea">
         
@@ -39,7 +41,15 @@
 }
 let PWVALUE = getCookie('PW')
 let JJOLVALUE = getCookie('JJOL')
+let TVALUE = getCookie('T')
+let GTVALUE = getCookie('GT')
+let TBVALUE = getCookie('TB')
+let TMVALUE = getCookie('TM')
 console.log(JJOLVALUE)
+if (TVALUE === '1'){
+    console.log("Player Has T")
+    document.getElementById('EventCorner').innerHTML = `<img src="Images/ThanksgivingEvent/Turkey.jpg" alt="Turkey" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+}
 if (PWVALUE === '1'){
     console.log('Player Has PW')
     document.getElementById('EventCorner').innerHTML = `<img src="Images/HalloweenEvent/Pickle Wart.jpg" alt="Pickle Wart' Lantern" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
@@ -47,6 +57,18 @@ if (PWVALUE === '1'){
 if (JJOLVALUE === '1'){
     console.log("Player Has JJOL")
     document.getElementById('EventCorner').innerHTML = `<img src="Images/HalloweenEvent/Jumping Jack o' Lantern.jpg" alt="Jumping Jack o' Lantern" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+}
+if (GTVALUE === '1'){
+    console.log("Player Has GT")
+    document.getElementById('EventCorner').innerHTML = `<img src="Images/ThanksgivingEvent/GoldenTurkey.jpg" alt="Golden Turkey" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+}
+if (TBVALUE === '1'){
+    console.log("Player Has TB")
+    document.getElementById('EventCorner').innerHTML = `<img src="Images/ThanksgivingEvent/TurkeyBallon.jpg" alt="Turkey Ballon" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+}
+if (TMVALUE === '1'){
+    console.log("Player Has TM")
+    document.getElementById('EventCorner').innerHTML = `<img src="Images/ThanksgivingEvent/ThanksgivingMeal.jpg" alt="Thanksgiving Meal" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
 }
 </script>
 </html>

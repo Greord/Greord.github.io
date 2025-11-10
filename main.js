@@ -291,24 +291,52 @@ function Halloween() {
             document.cookie = `Rolls=${rollsValue}; path=/;`
             document.getElementById("RollArea").innerHTML = `<h1>Rolls: ${rollsValue}</h1><br>
             <img src='Images/HalloweenEvent/Roll.jpg' width=200 hight=300 alt='Click to roll'; onclick='window.Roll()'>`
-            let Chance = RI(0,10000);
-            if (Chance >= 0 && Chance <= 20){
-                let answer = window.prompt("You got a Jumping Jack o' Lantern. Do you want to use it?", "type YES or NO");
-                if (answer === "YES"){
-                    document.cookie = `JJOL=1; path=/;`
-                    document.cookie = `PW=0; path=/;`
+            let Chance = RI(0,20000);
+            if (Chance >= 0 && Chance <= 80){
+                let answer = window.prompt("You got a Turkey. Do you want to use it?", "Hit Ok or Cancel");
+                if (answer === "Hit Ok or Cancel"){
+                    document.cookie = `T=1; path=/;`
+                    document.cookie = `GT=0; path=/;`
+                    document.cookie = `TB=0; path=/;`
+                    document.cookie = `TM=0; path=/;`
                 }
             }
-            if (Chance === 45){
-                let answer = window.prompt("You got a Pickle Wart. Do you want to use it?", "type YES or NO");
-                if (answer === "YES"){
-                    document.cookie = `PW=1; path=/;`
-                    document.cookie = `JJOL=0; path=/;`
+            if (Chance === 90){
+                let answer = window.prompt("You got a Thanksgiving Meal. Do you want to use it?", "Hit Ok or Cancel");
+                if (answer === "Hit Ok or Cancel"){
+                    document.cookie = `T=0; path=/;`
+                    document.cookie = `GT=0; path=/;`
+                    document.cookie = `TB=0; path=/;`
+                    document.cookie = `TM=1; path=/;`
+                }
+            }
+            if (Chance >= 91 & Chance <= 94){
+                let answer = window.prompt("You got a Golden Turkey. Do you want to use it?", "Hit Ok or Cancel");
+                if (answer === "Hit Ok or Cancel"){
+                    document.cookie = `T=0; path=/;`
+                    document.cookie = `GT=1; path=/;`
+                    document.cookie = `TB=0; path=/;`
+                    document.cookie = `TM=0; path=/;`
+                }
+            }
+            if (Chance >= 100 & Chance <= 101){
+                let answer = window.prompt("You got a Turkey Ballon. Do you want to use it?", "Hit Ok or Cancel");
+                if (answer === "Hit Ok or Cancel"){
+                    document.cookie = `T=0; path=/;`
+                    document.cookie = `GT=0; path=/;`
+                    document.cookie = `TB=1; path=/;`
+                    document.cookie = `TM=0; path=/;`
                 }
             }
         }
     }
     window.Roll = Roll;
+    function Tick(){
+        if (document.getElementById("Auto").checked){
+            Roll();
+        }
+    }
+    setInterval(Tick, 1)
 }
 
 
