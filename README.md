@@ -1,4 +1,6 @@
 # Audit Log
+### Update C.1
+- Now when Showing Characters each event get its own corner.
 ## Update C
 - Removed the Halloween Event
 - Added the Thanksgiving Event
