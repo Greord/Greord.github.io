@@ -360,7 +360,10 @@ function SearchPage(){
     "<ul id='wordlist'>" +
     Bookkeys.map(key => "<li><a class='button' href='word.html?key=" + key + "'>" + Titles[key] + "</a></li><br>").join('') +
     "</ul>"
-    + '<div id="EventCorner"></div>';
+    + '<div id="EventCorner"></div>'+
+    `<div id="HalloweenCorner">
+    </div>
+    <div id="ThanksgivingCorner"></div>`;
 }
 
 
@@ -430,6 +433,9 @@ function GeneratePage(key) {
     + "<audio controls><source src='" + prenounciation[key] + "' type='audio/ogg'>Your browser does not support the audio element.</audio>"
     + "</div>"
     + '<div id="EventCorner"></div>'
+    + `<div id="HalloweenCorner">
+    </div>
+    <div id="ThanksgivingCorner"></div>`
    ;
     }
 }

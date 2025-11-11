@@ -34,7 +34,8 @@
         <button class="WordBlockWithHover" onclick="NextQuestion();">Go to next Question</button>
         <br>
         <button class="WordBlockWithHover" onclick="ExportSet();">Export Current Set</button>
-        <div id="EventCorner">
+        <div id="HalloweenCorner">
+        <div id="ThanksgivingCorner">
     </body>
    <script>
     function getCookie(name) {
@@ -56,27 +57,27 @@ let TMVALUE = getCookie('TM')
 console.log(JJOLVALUE)
 if (TVALUE === '1'){
     console.log("Player Has T")
-    document.getElementById('EventCorner').innerHTML = `<img src="Images/ThanksgivingEvent/Turkey.jpg" alt="Turkey" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+    document.getElementById('ThanksgivingCorner').innerHTML = `<img src="Images/ThanksgivingEvent/Turkey.jpg" alt="Turkey" style="position: fixed; bottom: 10px; right: 20px;" height="100" width="100">`
 }
 if (PWVALUE === '1'){
     console.log('Player Has PW')
-    document.getElementById('EventCorner').innerHTML = `<img src="Images/HalloweenEvent/Pickle Wart.jpg" alt="Pickle Wart' Lantern" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+    document.getElementById('HalloweenCorner').innerHTML = `<img src="Images/HalloweenEvent/Pickle Wart.jpg" alt="Pickle Wart' Lantern" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
 }
 if (JJOLVALUE === '1'){
     console.log("Player Has JJOL")
-    document.getElementById('EventCorner').innerHTML = `<img src="Images/HalloweenEvent/Jumping Jack o' Lantern.jpg" alt="Jumping Jack o' Lantern" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+    document.getElementById('HalloweenCorner').innerHTML = `<img src="Images/HalloweenEvent/Jumping Jack o' Lantern.jpg" alt="Jumping Jack o' Lantern" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
 }
 if (GTVALUE === '1'){
     console.log("Player Has GT")
-    document.getElementById('EventCorner').innerHTML = `<img src="Images/ThanksgivingEvent/GoldenTurkey.jpg" alt="Golden Turkey" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+    document.getElementById('ThanksgivingCorner').innerHTML = `<img src="Images/ThanksgivingEvent/GoldenTurkey.jpg" alt="Golden Turkey" style="position: fixed; bottom: 10px; right: 20px;" height="100" width="100">`
 }
 if (TBVALUE === '1'){
     console.log("Player Has TB")
-    document.getElementById('EventCorner').innerHTML = `<img src="Images/ThanksgivingEvent/TurkeyBallon.jpg" alt="Turkey Ballon" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+    document.getElementById('ThanksgivingCorner').innerHTML = `<img src="Images/ThanksgivingEvent/TurkeyBallon.jpg" alt="Turkey Ballon" style="position: fixed; bottom: 10px; right: 20px;" height="100" width="100">`
 }
 if (TMVALUE === '1'){
     console.log("Player Has TM")
-    document.getElementById('EventCorner').innerHTML = `<img src="Images/ThanksgivingEvent/ThanksgivingMeal.jpg" alt="Thanksgiving Meal" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+    document.getElementById('ThanksgivingCorner').innerHTML = `<img src="Images/ThanksgivingEvent/ThanksgivingMeal.jpg" alt="Thanksgiving Meal" style="position: fixed; bottom: 10px; right: 20px;" height="100" width="100">`
 }
 </script>
 </html>
