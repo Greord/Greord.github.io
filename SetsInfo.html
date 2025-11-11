@@ -23,49 +23,9 @@
     <br><br>You can make sets at <a class="WordBlock" href="setcreator.html">our set creation tool.</a></p>
     <div id="Featured">
     <div id="HalloweenCorner">
-    <div id="ThanksgivingCorner"
+    <div id="ThanksgivingCorner"></div>
 </body>
 <script>
-    function getCookie(name) {
-  const nameEQ = name + "=";
-  const ca = document.cookie.split(';');
-  for(let i=0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-  }
-  return null;
-}
-let PWVALUE = getCookie('PW')
-let JJOLVALUE = getCookie('JJOL')
-let TVALUE = getCookie('T')
-let GTVALUE = getCookie('GT')
-let TBVALUE = getCookie('TB')
-let TMVALUE = getCookie('TM')
-console.log(JJOLVALUE)
-if (TVALUE === '1'){
-    console.log("Player Has T")
-    document.getElementById('ThanksgivingCorner').innerHTML = `<img src="Images/ThanksgivingEvent/Turkey.jpg" alt="Turkey" style="position: fixed; bottom: 10px; right: 20px;" height="100" width="100">`
-}
-if (PWVALUE === '1'){
-    console.log('Player Has PW')
-    document.getElementById('HalloweenCorner').innerHTML = `<img src="Images/HalloweenEvent/Pickle Wart.jpg" alt="Pickle Wart' Lantern" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
-}
-if (JJOLVALUE === '1'){
-    console.log("Player Has JJOL")
-    document.getElementById('HalloweenCorner').innerHTML = `<img src="Images/HalloweenEvent/Jumping Jack o' Lantern.jpg" alt="Jumping Jack o' Lantern" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
-}
-if (GTVALUE === '1'){
-    console.log("Player Has GT")
-    document.getElementById('ThanksgivingCorner').innerHTML = `<img src="Images/ThanksgivingEvent/GoldenTurkey.jpg" alt="Golden Turkey" style="position: fixed; bottom: 10px; right: 20px;" height="100" width="100">`
-}
-if (TBVALUE === '1'){
-    console.log("Player Has TB")
-    document.getElementById('ThanksgivingCorner').innerHTML = `<img src="Images/ThanksgivingEvent/TurkeyBallon.jpg" alt="Turkey Ballon" style="position: fixed; bottom: 10px; right: 20px;" height="100" width="100">`
-}
-if (TMVALUE === '1'){
-    console.log("Player Has TM")
-    document.getElementById('ThanksgivingCorner').innerHTML = `<img src="Images/ThanksgivingEvent/ThanksgivingMeal.jpg" alt="Thanksgiving Meal" style="position: fixed; bottom: 10px; right: 20px;" height="100" width="100">`
-}
+    LoadCharacters();
 </script>
 </html>
