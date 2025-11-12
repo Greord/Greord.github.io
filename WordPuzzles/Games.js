@@ -202,7 +202,7 @@ function Hangman() {
         } else if (!word.split('').some(l => !guessedLetters.includes(l))) {
             document.getElementById("GameArea").innerHTML = `<h2>Congratulations! You guessed the word: ${word}</h2><br><button class="button" onclick="window.location.reload();">Play Again</button>`;
             let currentRolls = parseInt(getCookie('Rolls') || '0', 10);
-            let newRolls = currentRolls + 18;
+            let newRolls = currentRolls + 700;
             document.cookie = `Rolls=${newRolls}; path=/;`;
         }
     }
@@ -436,4 +436,5 @@ function QuestForWood(){
     }
     let interval = setInterval(Check, 100)
     ShowQuestion();
+
 }
