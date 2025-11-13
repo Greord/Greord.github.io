@@ -20,6 +20,11 @@
 
 </body>
 <script>
+  const UrlParams = new URLSearchParams(window.location.search);
+  const key = UrlParams.get("key");
+  GeneratePage(key);
+</script>
+<script>
   LoadCharacters();
 </script>
 </html>
