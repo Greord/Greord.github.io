@@ -241,22 +241,26 @@ const name = {
         "RZm": "Sound/NAN.ogg",
         "RZf": "Sound/NAN.ogg"
     };
-    const Bookkeys = ["TAJ","TLWIH"];
+    const Bookkeys = ["TAJ","TLWIH","BDV"];
     const Titles = {
         "TAJ": "Tim and Joe",
-        "TLWIH": "The Longest Words in History"
+        "TLWIH": "The Longest Words in History",
+        "BDV": "Bryant Downloading Viruses"
     };
     const Authors = {
         "TAJ": "Xavier Zeppuhar",
-        "TLWIH": "Bryant W. and Nilabh K."
+        "TLWIH": "Bryant W. and Nilabh K.",
+        "BDV": "Ayan Tamang"
     };
     const Generes = {
         "TAJ": "Realistic Fiction",
-        "TLWIH": "Non-Fiction - Academic/Research"
+        "TLWIH": "Non-Fiction - Academic/Research",
+        "BDV": "Speculative Fiction"
     };
     const Pages = {
         "TAJ": [1, "Images/Tim_And_Joe/PG1.png"],
-        "TLWIH": [14, "Images/TLWIH/PG1.png","Images/TLWIH/PG2.png","Images/TLWIH/PG3.png","Images/TLWIH/PG4.png","Images/TLWIH/PG5.png","Images/TLWIH/PG6.png","Images/TLWIH/PG7.png","Images/TLWIH/PG8.png","Images/TLWIH/PG9.png","Images/TLWIH/PG10.png","Images/TLWIH/PG11.png","Images/TLWIH/PG12.png","Images/TLWIH/PG13.png","Images/TLWIH/PG15.png"]
+        "TLWIH": [14, "Images/TLWIH/PG1.png","Images/TLWIH/PG2.png","Images/TLWIH/PG3.png","Images/TLWIH/PG4.png","Images/TLWIH/PG5.png","Images/TLWIH/PG6.png","Images/TLWIH/PG7.png","Images/TLWIH/PG8.png","Images/TLWIH/PG9.png","Images/TLWIH/PG10.png","Images/TLWIH/PG11.png","Images/TLWIH/PG12.png","Images/TLWIH/PG13.png","Images/TLWIH/PG15.png"],
+        "BDV": [2, "Images/BDV/PG1.png", "Images/BDV/PG2.png"]
     };
 
 function getCookie(name) {
