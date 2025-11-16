@@ -20,8 +20,8 @@
 
 </body>
 <script>
-  const UrlParams = new URLSearchParams(window.location.search);
-  const key = UrlParams.get("key");
+  const parms = new URLSearchParams(window.location.search);
+  const key = parms.get("key");
   GeneratePage(key);
 </script>
 <script>

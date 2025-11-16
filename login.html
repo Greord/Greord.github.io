@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Greord</title>
+    <link rel="icon" type="image/x-icon" href="Images/Favicon.ico">
+    <link rel="stylesheet" href="style.css"> 
+    <script src="main.js"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B5TP29KP3X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B5TP29KP3X');
+</script>
+<body>
+    <h1 class="WordBlock">Account Management</h1>
+
+    <div>
+        <input type="email" id="emailInput" placeholder="Email" class="WordBlock"> <br><br>
+        <input type="password" id="passwordInput" placeholder="Password" class="BlueBlock"> <br><br>
+        <button id="signUpButton" class="WordBlock">Sign Up</button>
+        <button id="loginButton" class="BlueBlock">Log In</button>
+        <button id="logoutButton" style="display: none;" class="WordBlock">Log Out</button> <br><br>
+        <button id="saveButton" class="BlueBlock">Save</button>
+        <button id="loadButton" class="WordBlock">Load</button>
+    </div>
+
+    <p id="statusMessage"></p>
+    <p id="currentUserDisplay" class="BlueBlock">Not logged in.</p>
+    <script type="module" src="./login.js"></script>
+    <div id="HalloweenCorner">
+    </div>
+    <div id="ThanksgivingCorner"></div>
+</body>
+<script>
+    LoadCharacters();
+</script>
+</html>
