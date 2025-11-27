@@ -2,7 +2,7 @@
 import { db } from './firebase.js';
 import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
-const allowedCookieKeys = ["Rolls", "PW", "JJOL", "T", "GT", "TB", "TM"];
+const allowedCookieKeys = ["Rolls", "PW", "JJOL", "T", "GT", "TB", "TM","SC","Y","HC","P","GO","RO","SM","GM","CT"];
 
 function getFilteredCookiesObject() {
   const allCookies = document.cookie.split('; ').reduce((acc, cookiePair) => {
