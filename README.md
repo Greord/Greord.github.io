@@ -1,17 +1,17 @@
 # Audit Log
-### Christmas & Inventory
+## Christmas & Inventory
 - Christmas Event
     - Many new buddys and new event page! 
 - Inventory
     - Now when equiping buddys they go to your inventory and you can change between them
 - Bug Fix for Equcktions
-## Update C.1
+### Update C.1
 - Now when Showing Characters each event gets its own corner.
-## Update C
+### Update C
 - Removed the Halloween Event
 - Added the Thanksgiving Event
 - Copy and Paste disabled for speed vocab.
-## Update B
+### Update B
 - Added Study Mode
 - Added Set Creation
     - Make Sets Use
@@ -19,7 +19,7 @@
 - Bug Fixes
 - New Book
 - 4 New Words
-## Update A
+### Update A
 - Added The Audit Log
 - Added Halloween Event
     - Get Rolls By Playing Games
