@@ -1,6 +1,12 @@
 # Audit Log
-### Update C.1
-- Now when Showing Characters each event get its own corner.
+### Christmas & Inventory
+- Christmas Event
+    - Many new buddys and new event page! 
+- Inventory
+    - Now when equiping buddys they go to your inventory and you can change between them
+- Bug Fix for Equcktions
+## Update C.1
+- Now when Showing Characters each event gets its own corner.
 ## Update C
 - Removed the Halloween Event
 - Added the Thanksgiving Event
