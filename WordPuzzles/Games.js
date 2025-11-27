@@ -227,23 +227,26 @@ function eQUICKtions() {
         window.GameBoard = [RI(0, 100), RI(0, 100), RI(0, 100), RI(0, 100), RI(0, 100), RI(0, 100), RI(0, 100), RI(0, 100), RI(0, 100)];
     }
 
-    function Update() {
+    function Update(num) {
+        if (num) {
+            GameBoard[num] = RI(0,100);
+        }
         document.getElementById("GameArea").innerHTML = `
             <div class='EquationDisplay'>Equation: ${CurrentEquation}</div>
             <div class='EquationDisplay'>Time: ${EquationTimer}</div>
             <div class='EquationDisplay'>Score: ${EquicktionsScore}</div>
             <div class='eQUICKtionsGrid'>
-                <div class='eQUICKtionsCellTop' onclick='CurrentEquation += GameBoard[0]; Update();'>${GameBoard[0]}</div>
-                <div class='eQUICKtionsCellTop' onclick='CurrentEquation += GameBoard[1]; Update();'>${GameBoard[1]}</div>
-                <div class='eQUICKtionsCellTop' onclick='CurrentEquation += GameBoard[2]; Update();'>${GameBoard[2]}</div>
+                <div class='eQUICKtionsCellTop' onclick='CurrentEquation += GameBoard[0]; Update(0);'>${GameBoard[0]}</div>
+                <div class='eQUICKtionsCellTop' onclick='CurrentEquation += GameBoard[1]; Update(1);'>${GameBoard[1]}</div>
+                <div class='eQUICKtionsCellTop' onclick='CurrentEquation += GameBoard[2]; Update(2);'>${GameBoard[2]}</div>
                 <br><br>
-                <div class='eQUICKtionsCellMid' onclick='CurrentEquation += GameBoard[3]; Update();'>${GameBoard[3]}</div>
-                <div class='eQUICKtionsCellMid' onclick='CurrentEquation += GameBoard[4]; Update();'>${GameBoard[4]}</div>
-                <div class='eQUICKtionsCellMid' onclick='CurrentEquation += GameBoard[5]; Update();'>${GameBoard[5]}</div>
+                <div class='eQUICKtionsCellMid' onclick='CurrentEquation += GameBoard[3]; Update(3);'>${GameBoard[3]}</div>
+                <div class='eQUICKtionsCellMid' onclick='CurrentEquation += GameBoard[4]; Update(4);'>${GameBoard[4]}</div>
+                <div class='eQUICKtionsCellMid' onclick='CurrentEquation += GameBoard[5]; Update(5);'>${GameBoard[5]}</div>
                 <br><br>
-                <div class='eQUICKtionsCellBot' onclick='CurrentEquation += GameBoard[6]; Update();'>${GameBoard[6]}</div>
-                <div class='eQUICKtionsCellBot' onclick='CurrentEquation += GameBoard[7]; Update();'>${GameBoard[7]}</div>
-                <div class='eQUICKtionsCellBot' onclick='CurrentEquation += GameBoard[8]; Update();'>${GameBoard[8]}</div>
+                <div class='eQUICKtionsCellBot' onclick='CurrentEquation += GameBoard[6]; Update(6);'>${GameBoard[6]}</div>
+                <div class='eQUICKtionsCellBot' onclick='CurrentEquation += GameBoard[7]; Update(7);'>${GameBoard[7]}</div>
+                <div class='eQUICKtionsCellBot' onclick='CurrentEquation += GameBoard[8]; Update(8);'>${GameBoard[8]}</div>
             </div>
             <div class='OperationInput'>
                 <button class='button' onclick="CurrentEquation += '+'; Update();">+</button>
