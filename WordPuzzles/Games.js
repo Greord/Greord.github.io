@@ -1,5 +1,6 @@
 // Games Character Load
 function LoadCharacters(){
+    let Buddy = false;
     function getCookie(name) {
   const nameEQ = name + "=";
   const ca = document.cookie.split(';');
@@ -10,38 +11,32 @@ function LoadCharacters(){
   }
   return null;
 }
-let PWVALUE = getCookie('PW')
-let JJOLVALUE = getCookie('JJOL')
-let TVALUE = getCookie('T')
-let GTVALUE = getCookie('GT')
-let TBVALUE = getCookie('TB')
-let TMVALUE = getCookie('TM')
-console.log(JJOLVALUE)
-if (TVALUE === '1'){
-    console.log("Player Has T")
-    document.getElementById('ThanksgivingCorner').innerHTML = `<img src="../Images/ThanksgivingEvent/Turkey.jpg" alt="Turkey" style="position: fixed; bottom: 10px; right: 120px;" height="100" width="100">`
-}
-if (PWVALUE === '1'){
-    console.log('Player Has PW')
-    document.getElementById('HalloweenCorner').innerHTML = `<img src="../Images/HalloweenEvent/Pickle Wart.jpg" alt="Pickle Wart' Lantern" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
-}
-if (JJOLVALUE === '1'){
-    console.log("Player Has JJOL")
-    document.getElementById('HalloweenCorner').innerHTML = `<img src="../Images/HalloweenEvent/Jumping Jack o' Lantern.jpg" alt="Jumping Jack o' Lantern" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
-}
-if (GTVALUE === '1'){
-    console.log("Player Has GT")
-    document.getElementById('ThanksgivingCorner').innerHTML = `<img src="../Images/ThanksgivingEvent/GoldenTurkey.jpg" alt="Golden Turkey" style="position: fixed; bottom: 10px; right: 120px;" height="100" width="100">`
-}
-if (TBVALUE === '1'){
-    console.log("Player Has TB")
-    document.getElementById('ThanksgivingCorner').innerHTML = `<img src="../Images/ThanksgivingEvent/TurkeyBallon.jpg" alt="Turkey Ballon" style="position: fixed; bottom: 10px; right: 120px;" height="100" width="100">`
-}
-if (TMVALUE === '1'){
-    console.log("Player Has TM")
-    document.getElementById('ThanksgivingCorner').innerHTML = `<img src="../Images/ThanksgivingEvent/ThanksgivingMeal.jpg" alt="Thanksgiving Meal" style="position: fixed; bottom: 10px; right: 120px;" height="100" width="100">`
-}
-
+    const Buddys = {
+        "PW" : "Images/HalloweenEvent/Pickle Wart.jpg",
+        "JJOL" : "Images/HalloweenEvent/Jumping Jack o' Lantern.jpg",
+        "T" : "Images/ThanksgivingEvent/Turkey.jpg",
+        "GT" : "Images/ThanksgivingEvent/GoldenTurkey.jpg",
+        "TM" : "Images/ThanksgivingEvent/ThanksgivingMeal.jpg",
+        "TB" : "Images/ThanksgivingEvent/TurkeyBallon.jpg",
+        "CT" : "Images/ChristmasEvent/Christmas Tree.jpg",
+        "GM" : "Images/ChristmasEvent/Gingerbread Man.jpg",
+        "GO" : "Images/ChristmasEvent/Green Ornament .jpg",
+        "RO" : "Images/ChristmasEvent/Red Ornament.jpg",
+        "HC" : "Images/ChristmasEvent/Hot Coco.jpg",
+        "P" : "Images/ChristmasEvent/Presents.jpg",
+        "SC" : "Images/ChristmasEvent/Santa Clause.jpg",
+        "SM" : "Images/ChristmasEvent/Snowman.jpg",
+        "Y" : "Images/ChristmasEvent/Yeti.jpg"
+    }
+    for (BuddyKey in Buddys){
+       if (getCookie("CurrentBuddy") === BuddyKey){
+            document.getElementById("HalloweenCorner").innerHTML = `<img src="../${Buddys[BuddyKey]}" alt="Buddy" onclick="location.href=\'inventory.html\'" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+            Buddy = true;
+       }
+    }
+    if (Buddy === false){
+        document.getElementById("HalloweenCorner").innerHTML = `<img src="../Images/Placeholder.jpg" alt="Buddy" onclick="location.href=\'inventory.html\'" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+    }
 }
 // A variable to hold our word set once loaded
 let englishWords;
