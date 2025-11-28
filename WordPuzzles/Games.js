@@ -30,7 +30,7 @@ function LoadCharacters(){
     }
     for (BuddyKey in Buddys){
        if (getCookie("CurrentBuddy") === BuddyKey){
-            document.getElementById("HalloweenCorner").innerHTML = `<img src="../${Buddys[BuddyKey]}" alt="Buddy" onclick="location.href=\'inventory.html\'" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+            document.getElementById("HalloweenCorner").innerHTML = `<img src="../${Buddys[BuddyKey]}" alt="Buddy" onclick="location.href=\'../inventory.html\'" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
             Buddy = true;
        }
     }
