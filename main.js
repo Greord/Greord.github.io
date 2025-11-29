@@ -327,9 +327,9 @@ function Halloween() {
                 }
             }
             if (Chance >= 500 && Chance <= 700){
-                let answer = window.prompt("You got a Green Ornament. Do you want to use it?", "Hit Ok or Cancel");
+                let answer = window.prompt("You got a Presents. Do you want to use it?", "Hit Ok or Cancel");
                 if (answer === "Hit Ok or Cancel"){
-                    document.cookie = `GO=1; path=/;`
+                    document.cookie = `P=1; path=/;`
                 }
             }
             if (Chance === 90){
