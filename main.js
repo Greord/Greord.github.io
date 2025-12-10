@@ -295,61 +295,97 @@ function Halloween() {
             document.cookie = `Rolls=${rollsValue}; path=/;`
             document.getElementById("RollArea").innerHTML = `<h1>Rolls: ${rollsValue}</h1><br>
             <img src='Images/HalloweenEvent/Roll.jpg' width=200 hight=300 alt='Click to roll'; onclick='window.Roll()'>`
-            let Chance = RI(0,500000);
-            if (Chance >= 110 && Chance <= 120){
-                let answer = window.prompt("You got a Snowman. Do you want to use it?", "Hit Ok or Cancel");
-                if (answer === "Hit Ok or Cancel"){
-                    document.cookie = `SM=1; path=/;`
-                }
-            }
-            if (Chance >= 0 && Chance <= 20){
-                let answer = window.prompt("You got a Hot Coco. Do you want to use it?", "Hit Ok or Cancel");
-                if (answer === "Hit Ok or Cancel"){
-                    document.cookie = `HC=1; path=/;`
-                }
-            }
-            if (Chance >= 30 && Chance <= 80){
-                let answer = window.prompt("You got a Christmas Tree. Do you want to use it?", "Hit Ok or Cancel");
-                if (answer === "Hit Ok or Cancel"){
-                    document.cookie = `CT=1; path=/;`
-                }
-            }
-            if (Chance >= 130 && Chance <= 230){
-                let answer = window.prompt("You got a Red Ornament. Do you want to use it?", "Hit Ok or Cancel");
-                if (answer === "Hit Ok or Cancel"){
-                    document.cookie = `RO=1; path=/;`
-                }
-            }
-            if (Chance >= 240 && Chance <= 340){
-                let answer = window.prompt("You got a Green Ornament. Do you want to use it?", "Hit Ok or Cancel");
-                if (answer === "Hit Ok or Cancel"){
-                    document.cookie = `GO=1; path=/;`
-                }
-            }
-            if (Chance >= 500 && Chance <= 700){
-                let answer = window.prompt("You got a Presents. Do you want to use it?", "Hit Ok or Cancel");
-                if (answer === "Hit Ok or Cancel"){
-                    document.cookie = `P=1; path=/;`
-                }
-            }
-            if (Chance === 90){
-                let answer = window.prompt("You got a Santa Clause. Do you want to use it?", "Hit Ok or Cancel");
-                if (answer === "Hit Ok or Cancel"){
-                    document.cookie = `SC=1; path=/;` 
-                }
-            }
-            if (Chance >= 91 & Chance <= 96){
-                let answer = window.prompt("You got a Gingerbread Man. Do you want to use it?", "Hit Ok or Cancel");
-                if (answer === "Hit Ok or Cancel"){
-                    document.cookie = `GM=1; path=/;`
-                }
-            }
-            if (Chance >= 100 & Chance <= 101){
-                let answer = window.prompt("You got a Yeti. Do you want to use it?", "Hit Ok or Cancel");
-                if (answer === "Hit Ok or Cancel"){
-                    document.cookie = `Y=1; path=/;` 
-                }
-            }
+            function incrementCookie(cookieName) {
+    let currentValue = getCookie(cookieName);
+    
+    // Parse the value. If it is null, undefined, or empty, default to 0.
+    let number = parseInt(currentValue, 10);
+
+    // SAFETY CHECK: If the cookie was previously corrupted and is NaN, reset to 0
+    if (isNaN(number)) {
+        number = 0;
+    }
+
+    // Add 1 and save
+    let newValue = number + 1;
+    document.cookie = `${cookieName}=${newValue}; path=/;`;
+    console.log(`Updated ${cookieName} to ${newValue}`);
+}
+
+// 2. Your Random Logic
+    let Chance = RI(0, 500000); 
+
+    // Snowman
+    if (Chance >= 110 && Chance <= 120) {
+        let answer = window.prompt("You got a Snowman. Do you want to use it?", "Hit Ok or Cancel");
+        if (answer === "Hit Ok or Cancel") {
+            incrementCookie("SM");
+        }
+    }
+
+    // Hot Coco
+    if (Chance >= 0 && Chance <= 20) {
+        let answer = window.prompt("You got a Hot Coco. Do you want to use it?", "Hit Ok or Cancel");
+        if (answer === "Hit Ok or Cancel") {
+            incrementCookie("HC");
+        }
+    }
+
+    // Christmas Tree
+    if (Chance >= 30 && Chance <= 80) {
+        let answer = window.prompt("You got a Christmas Tree. Do you want to use it?", "Hit Ok or Cancel");
+        if (answer === "Hit Ok or Cancel") {
+            incrementCookie("CT");
+        }
+    }
+
+    // Red Ornament
+    if (Chance >= 130 && Chance <= 230) {
+        let answer = window.prompt("You got a Red Ornament. Do you want to use it?", "Hit Ok or Cancel");
+        if (answer === "Hit Ok or Cancel") {
+            incrementCookie("RO");
+        }
+    }
+
+    // Green Ornament
+    if (Chance >= 240 && Chance <= 340) {
+        let answer = window.prompt("You got a Green Ornament. Do you want to use it?", "Hit Ok or Cancel");
+        if (answer === "Hit Ok or Cancel") {
+            incrementCookie("GO");
+        }
+    }
+
+    // Presents
+    if (Chance >= 500 && Chance <= 700) {
+        let answer = window.prompt("You got a Presents. Do you want to use it?", "Hit Ok or Cancel");
+        if (answer === "Hit Ok or Cancel") {
+            incrementCookie("P");
+        }
+    }
+
+    // Santa Clause
+    if (Chance === 90) {
+        let answer = window.prompt("You got a Santa Clause. Do you want to use it?", "Hit Ok or Cancel");
+        if (answer === "Hit Ok or Cancel") {
+            incrementCookie("SC");
+        }
+    }
+
+    // Gingerbread Man (Fixed '&' to '&&')
+    if (Chance >= 91 && Chance <= 96) {
+        let answer = window.prompt("You got a Gingerbread Man. Do you want to use it?", "Hit Ok or Cancel");
+        if (answer === "Hit Ok or Cancel") {
+            incrementCookie("GM");
+        }
+    }
+
+    // Yeti (Fixed '&' to '&&')
+    if (Chance >= 100 && Chance <= 101) {
+        let answer = window.prompt("You got a Yeti. Do you want to use it?", "Hit Ok or Cancel");
+        if (answer === "Hit Ok or Cancel") {
+            incrementCookie("Y");
+        }
+    }
         }
     }
     window.Roll = Roll;
@@ -519,14 +555,42 @@ function Inventory(){
         "SM" : "Images/ChristmasEvent/Snowman.jpg",
         "Y" : "Images/ChristmasEvent/Yeti.jpg"
     }
+    const Rarities = {
+        "PW" : "1000000",
+        "JJOL" : "25000",
+        "T" : "800",
+        "GT" : "8000",
+        "TM" : "25000",
+        "TB" : "15000",
+        "CT" : "8000",
+        "GM" : "80000",
+        "GO" : "4000",
+        "RO" : "4000",
+        "HC" : "20000",
+        "P" : "40",
+        "SC" : "480000",
+        "SM" : "40000",
+        "Y" : "230000"
+    }
     for (BuddyKey in Buddys){
-       if (getCookie(BuddyKey) === "1"){
-            InventoryHtml += `<img src="${Buddys[BuddyKey]}" onclick='document.cookie = "CurrentBuddy = ${BuddyKey}; path=/" ' style="margin-right: 10px;" alt="Buddy" height="100" width="100">`
+       if (parseInt(getCookie(BuddyKey)) >= 1){
+        for (let i=0; i < parseInt(getCookie(BuddyKey)); i++){
+            InventoryHtml += `<img src="${Buddys[BuddyKey]}" 
+    onclick='document.cookie = "CurrentBuddy = ${BuddyKey}; path=/";'  
+    oncontextmenu="
+        event.preventDefault(); 
+        let answer = window.prompt('Do you want to sell your buddy for ${Rarities[BuddyKey]} Rolls?', 'Hit Ok or Cancel');
+        if (answer === 'Hit Ok or Cancel') {
+            document.cookie = '${BuddyKey} = ${parseInt(getCookie(BuddyKey)) - 1}; path=/';
+            document.cookie = 'CurrentBuddy=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+            document.cookie = 'Rolls = ${parseInt(getCookie("Rolls")) + parseInt(Rarities[BuddyKey])}; path=/';
+            document.location.reload();
+        }
+    " 
+    style="margin-right: 10px;" alt="Buddy" height="100" width="100">`;
        }
     }
+    
+}
     return InventoryHtml;
 }
-
-
-
-
