@@ -1,5 +1,8 @@
 # Audit Log
-## Christmas & Inventory
+## Selling Update
+- You can have multiple buddys
+- You can sell them for rolls by right clicking
+### Christmas & Inventory
 - Christmas Event
     - Many new buddys and new event page! 
 - Inventory
