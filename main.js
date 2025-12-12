@@ -562,15 +562,16 @@ function Inventory(){
         "GT" : "8000",
         "TM" : "25000",
         "TB" : "15000",
-        "CT" : "8000",
-        "GM" : "80000",
-        "GO" : "400",
+        "CT" : "7000",
+        "GM" : "70000",
+        "GO" : "800",
         "RO" : "400",
         "HC" : "20000",
-        "P" : "40",
-        "SC" : "480000",
-        "SM" : "40000",
-        "Y" : "230000"
+        "P" : "800",
+        "SC" : "330000",
+        "SM" : "30000",
+        "Y" : "200000
+            "
     }
     for (BuddyKey in Buddys){
        if (parseInt(getCookie(BuddyKey)) >= 1){
@@ -594,4 +595,5 @@ function Inventory(){
 }
     return InventoryHtml;
 }
+
 
