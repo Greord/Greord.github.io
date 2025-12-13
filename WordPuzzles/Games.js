@@ -35,7 +35,7 @@ function LoadCharacters(){
        }
     }
     if (Buddy === false){
-        document.getElementById("HalloweenCorner").innerHTML = `<img src="../Images/Placeholder.jpg" alt="Buddy" onclick="location.href=\'inventory.html\'" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
+        document.getElementById("HalloweenCorner").innerHTML = `<img src="../Images/Placeholder.jpg" alt="Buddy" onclick="location.href=\'../inventory.html\'" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
     }
 }
 // A variable to hold our word set once loaded
@@ -118,7 +118,7 @@ function GameStart(GameType) {
         document.getElementById("GameArea").innerHTML = `
             <div class='Timer' id="Timer">Time: ${Timer}</div>
             <div class='Score' id="Score">Score: ${Score}</div>
-            <input class='Input' onpaste="return false;" ondrop="return false;" type="text" id="UserInput" placeholder="Type the word here" />
+            <input class='Input' autocomplete="off" name="UserInput" onpaste="return false;" ondrop="return false;" type="text" id="UserInput" placeholder="Type the word here" />
         `;
 
         const userInputElement = document.getElementById("UserInput");
@@ -225,6 +225,9 @@ function eQUICKtions() {
     function Update(num) {
         if (num) {
             GameBoard[num] = RI(0,100);
+        }
+        if (num === 0){
+            GameBoard[0] = RI(0,100);
         }
         document.getElementById("GameArea").innerHTML = `
             <div class='EquationDisplay'>Equation: ${CurrentEquation}</div>
