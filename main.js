@@ -564,8 +564,8 @@ function Inventory(){
         "TB" : "15000",
         "CT" : "8000",
         "GM" : "80000",
-        "GO" : "400",
-        "RO" : "400",
+        "GO" : "4000",
+        "RO" : "4000",
         "HC" : "20000",
         "P" : "40",
         "SC" : "480000",
@@ -594,4 +594,3 @@ function Inventory(){
 }
     return InventoryHtml;
 }
-
