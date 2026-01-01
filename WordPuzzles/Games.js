@@ -12,21 +12,29 @@ function LoadCharacters(){
   return null;
 }
     const Buddys = {
-        "PW" : "Images/HalloweenEvent/Pickle Wart.jpg",
-        "JJOL" : "Images/HalloweenEvent/Jumping Jack o' Lantern.jpg",
-        "T" : "Images/ThanksgivingEvent/Turkey.jpg",
-        "GT" : "Images/ThanksgivingEvent/GoldenTurkey.jpg",
-        "TM" : "Images/ThanksgivingEvent/ThanksgivingMeal.jpg",
-        "TB" : "Images/ThanksgivingEvent/TurkeyBallon.jpg",
-        "CT" : "Images/ChristmasEvent/Christmas Tree.jpg",
-        "GM" : "Images/ChristmasEvent/Gingerbread Man.jpg",
-        "GO" : "Images/ChristmasEvent/Green Ornament .jpg",
-        "RO" : "Images/ChristmasEvent/Red Ornament.jpg",
-        "HC" : "Images/ChristmasEvent/Hot Coco.jpg",
-        "P" : "Images/ChristmasEvent/Presents.jpg",
-        "SC" : "Images/ChristmasEvent/Santa Clause.jpg",
-        "SM" : "Images/ChristmasEvent/Snowman.jpg",
-        "Y" : "Images/ChristmasEvent/Yeti.jpg"
+        // Previous Events
+        "PW": "Images/HalloweenEvent/Pickle Wart.jpg",
+        "JJOL": "Images/HalloweenEvent/Jumping Jack o' Lantern.jpg",
+        "T": "Images/ThanksgivingEvent/Turkey.jpg",
+        "GT": "Images/ThanksgivingEvent/GoldenTurkey.jpg",
+        "TM": "Images/ThanksgivingEvent/ThanksgivingMeal.jpg",
+        "TB": "Images/ThanksgivingEvent/TurkeyBallon.jpg",
+        "CT": "Images/ChristmasEvent/Christmas Tree.jpg",
+        "GM": "Images/ChristmasEvent/Gingerbread Man.jpg",
+        "GO": "Images/ChristmasEvent/Green Ornament .jpg",
+        "RO": "Images/ChristmasEvent/Red Ornament.jpg",
+        "HC": "Images/ChristmasEvent/Hot Coco.jpg",
+        "P": "Images/ChristmasEvent/Presents.jpg",
+        "SC": "Images/ChristmasEvent/Santa Clause.jpg",
+        "SM": "Images/ChristmasEvent/Snowman.jpg",
+        "Y": "Images/ChristmasEvent/Yeti.jpg",
+        "CON": "Images/NewYearsEvent/Confetti.jpg",
+        "SPK": "Images/NewYearsEvent/Sparkler.jpg",
+        "PH": "Images/NewYearsEvent/Party Horn.jpg",
+        "TH": "Images/NewYearsEvent/Top Hat.jpg",
+        "BAL": "Images/NewYearsEvent/Balloon.jpg",
+        "FW": "Images/NewYearsEvent/Fireworks.jpg",
+        "MC": "Images/NewYearsEvent/Midnight Clock.gif"
     }
     for (BuddyKey in Buddys){
        if (getCookie("CurrentBuddy") === BuddyKey){
