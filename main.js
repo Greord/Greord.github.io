@@ -564,7 +564,7 @@ function Inventory() {
         "Y": "230000",
 
         // New Years Event (Sell value = Half of Rarity)
-        "CON": "1250",    // Half of 2,500
+        "CON": "250",    // Half of 2,500
         "SPK": "5000",    // Half of 10,000
         "PH": "20000",    // Half of 40,000
         "TH": "62500",    // Half of 125,000
@@ -599,3 +599,4 @@ function Inventory() {
     }
     return InventoryHtml;
 }
+
