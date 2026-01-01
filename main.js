@@ -278,123 +278,91 @@ function RI(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 function Halloween() {
-    let rollsValue = parseInt(getCookie('Rolls') || '0', 10);
-    let freeRoll = getCookie("freeRoll")
-    if (rollsValue <= 0) {
+    let rollsValue = parseInt(getCookie('Rolls') || '0', 10);
+    let freeRoll = getCookie("freeRoll");
+
+    if (rollsValue <= 0) {
         if (freeRoll != "TRUE") {
-        document.cookie = `Rolls=1; path=/;`
-        document.cookie = `freeRoll=TRUE; path=/;`
-        rollsValue = 1;
+            document.cookie = `Rolls=1; path=/;`;
+            document.cookie = `freeRoll=TRUE; path=/;`;
+            rollsValue = 1;
         }  
-    }
-    document.getElementById("RollArea").innerHTML = `<h1>Rolls: ${rollsValue}</h1><br>
-    <img src='Images/HalloweenEvent/Roll.jpg' width=200 hight=300 alt='Click to roll'; onclick='window.Roll()'>`
-    function Roll(){
+    }
+
+    document.getElementById("RollArea").innerHTML = `<h1>Rolls: ${rollsValue}</h1><br>
+    <img src='Images/HalloweenEvent/Roll.jpg' width=200 height=300 alt='Click to roll' onclick='window.Roll()'>`;
+
+    function Roll() {
         if (rollsValue > 0) {
             rollsValue -= 1;
-            document.cookie = `Rolls=${rollsValue}; path=/;`
+            document.cookie = `Rolls=${rollsValue}; path=/;`;
             document.getElementById("RollArea").innerHTML = `<h1>Rolls: ${rollsValue}</h1><br>
-            <img src='Images/HalloweenEvent/Roll.jpg' width=200 hight=300 alt='Click to roll'; onclick='window.Roll()'>`
+            <img src='Images/HalloweenEvent/Roll.jpg' width=200 height=300 alt='Click to roll' onclick='window.Roll()'>`;
+
             function incrementCookie(cookieName) {
-    let currentValue = getCookie(cookieName);
-    
-    // Parse the value. If it is null, undefined, or empty, default to 0.
-    let number = parseInt(currentValue, 10);
+                let currentValue = getCookie(cookieName);
+                let number = parseInt(currentValue, 10);
+                if (isNaN(number)) { number = 0; }
+                let newValue = number + 1;
+                document.cookie = `${cookieName}=${newValue}; path=/;`;
+                console.log(`Updated ${cookieName} to ${newValue}`);
+            }
 
-    // SAFETY CHECK: If the cookie was previously corrupted and is NaN, reset to 0
-    if (isNaN(number)) {
-        number = 0;
-    }
+            // Random Range set to 1.5 Million for high-speed rolling
+            let Chance = RI(0, 1500000); 
 
-    // Add 1 and save
-    let newValue = number + 1;
-    document.cookie = `${cookieName}=${newValue}; path=/;`;
-    console.log(`Updated ${cookieName} to ${newValue}`);
-}
+            // 1. Confetti (1 in 2,500)
+            if (Chance >= 1000 && Chance <= 1599) {
+                let answer = window.prompt("You got Confetti. Do you want to use it?", "Hit Ok or Cancel");
+                if (answer === "Hit Ok or Cancel") { incrementCookie("CON"); }
+            }
 
-// 2. Your Random Logic
-    let Chance = RI(0, 500000); 
+            // 2. Sparkler (1 in 10,000)
+            if (Chance >= 2000 && Chance <= 2149) {
+                let answer = window.prompt("You got a Sparkler. Do you want to use it?", "Hit Ok or Cancel");
+                if (answer === "Hit Ok or Cancel") { incrementCookie("SPK"); }
+            }
 
-    // Snowman
-    if (Chance >= 110 && Chance <= 120) {
-        let answer = window.prompt("You got a Snowman. Do you want to use it?", "Hit Ok or Cancel");
-        if (answer === "Hit Ok or Cancel") {
-            incrementCookie("SM");
+            // 3. Party Horn (1 in 40,000)
+            if (Chance >= 3000 && Chance <= 3037) {
+                let answer = window.prompt("You got a Party Horn. Do you want to use it?", "Hit Ok or Cancel");
+                if (answer === "Hit Ok or Cancel") { incrementCookie("PH"); }
+            }
+
+            // 4. Top Hat (1 in 125,000)
+            if (Chance >= 4000 && Chance <= 4011) {
+                let answer = window.prompt("You got a Top Hat. Do you want to use it?", "Hit Ok or Cancel");
+                if (answer === "Hit Ok or Cancel") { incrementCookie("TH"); }
+            }
+
+            // 5. Balloon (1 in 350,000)
+            if (Chance >= 5000 && Chance <= 5003) {
+                let answer = window.prompt("You got a Balloon. Do you want to use it?", "Hit Ok or Cancel");
+                if (answer === "Hit Ok or Cancel") { incrementCookie("BAL"); }
+            }
+
+            // 6. Fireworks (1 in 800,000)
+            if (Chance >= 6000 && Chance <= 6001) {
+                let answer = window.prompt("You got Fireworks. Do you want to use it?", "Hit Ok or Cancel");
+                if (answer === "Hit Ok or Cancel") { incrementCookie("FW"); }
+            }
+
+            // 7. Midnight Clock (1 in 1,500,000)
+            if (Chance === 1200000) {
+                let answer = window.prompt("HAPPY NEW YEAR! You got the Midnight Clock. Do you want to use it?", "Hit Ok or Cancel");
+                if (answer === "Hit Ok or Cancel") { incrementCookie("MC"); }
+            }
         }
     }
 
-    // Hot Coco
-    if (Chance >= 0 && Chance <= 20) {
-        let answer = window.prompt("You got a Hot Coco. Do you want to use it?", "Hit Ok or Cancel");
-        if (answer === "Hit Ok or Cancel") {
-            incrementCookie("HC");
-        }
-    }
-
-    // Christmas Tree
-    if (Chance >= 30 && Chance <= 80) {
-        let answer = window.prompt("You got a Christmas Tree. Do you want to use it?", "Hit Ok or Cancel");
-        if (answer === "Hit Ok or Cancel") {
-            incrementCookie("CT");
-        }
-    }
-
-    // Red Ornament
-    if (Chance >= 130 && Chance <= 230) {
-        let answer = window.prompt("You got a Red Ornament. Do you want to use it?", "Hit Ok or Cancel");
-        if (answer === "Hit Ok or Cancel") {
-            incrementCookie("RO");
-        }
-    }
-
-    // Green Ornament
-    if (Chance >= 240 && Chance <= 340) {
-        let answer = window.prompt("You got a Green Ornament. Do you want to use it?", "Hit Ok or Cancel");
-        if (answer === "Hit Ok or Cancel") {
-            incrementCookie("GO");
-        }
-    }
-
-    // Presents
-    if (Chance >= 500 && Chance <= 700) {
-        let answer = window.prompt("You got a Presents. Do you want to use it?", "Hit Ok or Cancel");
-        if (answer === "Hit Ok or Cancel") {
-            incrementCookie("P");
-        }
-    }
-
-    // Santa Clause
-    if (Chance === 90) {
-        let answer = window.prompt("You got a Santa Clause. Do you want to use it?", "Hit Ok or Cancel");
-        if (answer === "Hit Ok or Cancel") {
-            incrementCookie("SC");
-        }
-    }
-
-    // Gingerbread Man (Fixed '&' to '&&')
-    if (Chance >= 91 && Chance <= 96) {
-        let answer = window.prompt("You got a Gingerbread Man. Do you want to use it?", "Hit Ok or Cancel");
-        if (answer === "Hit Ok or Cancel") {
-            incrementCookie("GM");
-        }
-    }
-
-    // Yeti (Fixed '&' to '&&')
-    if (Chance >= 100 && Chance <= 101) {
-        let answer = window.prompt("You got a Yeti. Do you want to use it?", "Hit Ok or Cancel");
-        if (answer === "Hit Ok or Cancel") {
-            incrementCookie("Y");
-        }
-    }
-        }
-    }
     window.Roll = Roll;
-    function Tick(){
-        if (document.getElementById("Auto").checked){
+
+    function Tick() {
+        if (document.getElementById("Auto") && document.getElementById("Auto").checked) {
             Roll();
         }
     }
-    setInterval(Tick, 1)
+    setInterval(Tick, 1);
 }
 
 
@@ -442,42 +410,53 @@ function SearchFunction() {
     }
 }
 
-function LoadCharacters(){
+function LoadCharacters() {
     let Buddy = false;
     function getCookie(name) {
-  const nameEQ = name + "=";
-  const ca = document.cookie.split(';');
-  for(let i=0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-  }
-  return null;
-}
-    const Buddys = {
-        "PW" : "Images/HalloweenEvent/Pickle Wart.jpg",
-        "JJOL" : "Images/HalloweenEvent/Jumping Jack o' Lantern.jpg",
-        "T" : "Images/ThanksgivingEvent/Turkey.jpg",
-        "GT" : "Images/ThanksgivingEvent/GoldenTurkey.jpg",
-        "TM" : "Images/ThanksgivingEvent/ThanksgivingMeal.jpg",
-        "TB" : "Images/ThanksgivingEvent/TurkeyBallon.jpg",
-        "CT" : "Images/ChristmasEvent/Christmas Tree.jpg",
-        "GM" : "Images/ChristmasEvent/Gingerbread Man.jpg",
-        "GO" : "Images/ChristmasEvent/Green Ornament .jpg",
-        "RO" : "Images/ChristmasEvent/Red Ornament.jpg",
-        "HC" : "Images/ChristmasEvent/Hot Coco.jpg",
-        "P" : "Images/ChristmasEvent/Presents.jpg",
-        "SC" : "Images/ChristmasEvent/Santa Clause.jpg",
-        "SM" : "Images/ChristmasEvent/Snowman.jpg",
-        "Y" : "Images/ChristmasEvent/Yeti.jpg"
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
     }
-    for (BuddyKey in Buddys){
-       if (getCookie("CurrentBuddy") === BuddyKey){
+
+    const Buddys = {
+        // Previous Events
+        "PW": "Images/HalloweenEvent/Pickle Wart.jpg",
+        "JJOL": "Images/HalloweenEvent/Jumping Jack o' Lantern.jpg",
+        "T": "Images/ThanksgivingEvent/Turkey.jpg",
+        "GT": "Images/ThanksgivingEvent/GoldenTurkey.jpg",
+        "TM": "Images/ThanksgivingEvent/ThanksgivingMeal.jpg",
+        "TB": "Images/ThanksgivingEvent/TurkeyBallon.jpg",
+        "CT": "Images/ChristmasEvent/Christmas Tree.jpg",
+        "GM": "Images/ChristmasEvent/Gingerbread Man.jpg",
+        "GO": "Images/ChristmasEvent/Green Ornament .jpg",
+        "RO": "Images/ChristmasEvent/Red Ornament.jpg",
+        "HC": "Images/ChristmasEvent/Hot Coco.jpg",
+        "P": "Images/ChristmasEvent/Presents.jpg",
+        "SC": "Images/ChristmasEvent/Santa Clause.jpg",
+        "SM": "Images/ChristmasEvent/Snowman.jpg",
+        "Y": "Images/ChristmasEvent/Yeti.jpg",
+        "CON": "Images/NewYearsEvent/Confetti.jpg",
+        "SPK": "Images/NewYearsEvent/Sparkler.jpg",
+        "PH": "Images/NewYearsEvent/Party Horn.jpg",
+        "TH": "Images/NewYearsEvent/Top Hat.jpg",
+        "BAL": "Images/NewYearsEvent/Balloon.jpg",
+        "FW": "Images/NewYearsEvent/Fireworks.jpg",
+        "MC": "Images/NewYearsEvent/Midnight Clock.gif"
+    }
+
+    for (let BuddyKey in Buddys) {
+        if (getCookie("CurrentBuddy") === BuddyKey) {
             document.getElementById("HalloweenCorner").innerHTML = `<img src="${Buddys[BuddyKey]}" alt="Buddy" onclick="location.href=\'inventory.html\'" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
             Buddy = true;
-       }
+        }
     }
-    if (Buddy === false){
+
+    if (Buddy === false) {
         document.getElementById("HalloweenCorner").innerHTML = `<img src="Images/Placeholder.jpg" alt="Buddy" onclick="location.href=\'inventory.html\'" style="position: fixed; bottom: 10px; right: 10px;" height="100" width="100">`
     }
 }
@@ -536,61 +515,87 @@ function GeneratePage(key) {
     }
 }
 
-function Inventory(){
+function Inventory() {
     let InventoryHtml = "";
     const Buddys = {
-        "PW" : "Images/HalloweenEvent/Pickle Wart.jpg",
-        "JJOL" : "Images/HalloweenEvent/Jumping Jack o' Lantern.jpg",
-        "T" : "Images/ThanksgivingEvent/Turkey.jpg",
-        "GT" : "Images/ThanksgivingEvent/GoldenTurkey.jpg",
-        "TM" : "Images/ThanksgivingEvent/ThanksgivingMeal.jpg",
-        "TB" : "Images/ThanksgivingEvent/TurkeyBallon.jpg",
-        "CT" : "Images/ChristmasEvent/Christmas Tree.jpg",
-        "GM" : "Images/ChristmasEvent/Gingerbread Man.jpg",
-        "GO" : "Images/ChristmasEvent/Green Ornament .jpg",
-        "RO" : "Images/ChristmasEvent/Red Ornament.jpg",
-        "HC" : "Images/ChristmasEvent/Hot Coco.jpg",
-        "P" : "Images/ChristmasEvent/Presents.jpg",
-        "SC" : "Images/ChristmasEvent/Santa Clause.jpg",
-        "SM" : "Images/ChristmasEvent/Snowman.jpg",
-        "Y" : "Images/ChristmasEvent/Yeti.jpg"
+        // Previous Events
+        "PW": "Images/HalloweenEvent/Pickle Wart.jpg",
+        "JJOL": "Images/HalloweenEvent/Jumping Jack o' Lantern.jpg",
+        "T": "Images/ThanksgivingEvent/Turkey.jpg",
+        "GT": "Images/ThanksgivingEvent/GoldenTurkey.jpg",
+        "TM": "Images/ThanksgivingEvent/ThanksgivingMeal.jpg",
+        "TB": "Images/ThanksgivingEvent/TurkeyBallon.jpg",
+        "CT": "Images/ChristmasEvent/Christmas Tree.jpg",
+        "GM": "Images/ChristmasEvent/Gingerbread Man.jpg",
+        "GO": "Images/ChristmasEvent/Green Ornament .jpg",
+        "RO": "Images/ChristmasEvent/Red Ornament.jpg",
+        "HC": "Images/ChristmasEvent/Hot Coco.jpg",
+        "P": "Images/ChristmasEvent/Presents.jpg",
+        "SC": "Images/ChristmasEvent/Santa Clause.jpg",
+        "SM": "Images/ChristmasEvent/Snowman.jpg",
+        "Y": "Images/ChristmasEvent/Yeti.jpg",
+
+        // New Years Event (New folder)
+        "CON": "Images/NewYearsEvent/Confetti.jpg",
+        "SPK": "Images/NewYearsEvent/Sparkler.jpg",
+        "PH": "Images/NewYearsEvent/Party Horn.jpg",
+        "TH": "Images/NewYearsEvent/Top Hat.jpg",
+        "BAL": "Images/NewYearsEvent/Balloon.jpg",
+        "FW": "Images/NewYearsEvent/Fireworks.jpg",
+        "MC": "Images/NewYearsEvent/Midnight Clock.gif"
     }
+
     const Rarities = {
-        "PW" : "1000000",
-        "JJOL" : "25000",
-        "T" : "800",
-        "GT" : "8000",
-        "TM" : "25000",
-        "TB" : "15000",
-        "CT" : "8000",
-        "GM" : "80000",
-        "GO" : "4000",
-        "RO" : "4000",
-        "HC" : "20000",
-        "P" : "40",
-        "SC" : "480000",
-        "SM" : "40000",
-        "Y" : "230000"
+        // Previous Events (Kept original values)
+        "PW": "1000000",
+        "JJOL": "25000",
+        "T": "800",
+        "GT": "8000",
+        "TM": "25000",
+        "TB": "15000",
+        "CT": "8000",
+        "GM": "80000",
+        "GO": "4000",
+        "RO": "4000",
+        "HC": "20000",
+        "P": "40",
+        "SC": "480000",
+        "SM": "40000",
+        "Y": "230000",
+
+        // New Years Event (Sell value = Half of Rarity)
+        "CON": "1250",    // Half of 2,500
+        "SPK": "5000",    // Half of 10,000
+        "PH": "20000",    // Half of 40,000
+        "TH": "62500",    // Half of 125,000
+        "BAL": "175000",  // Half of 350,000
+        "FW": "400000",   // Half of 800,000
+        "MC": "750000"    // Half of 1,500,000
     }
-    for (BuddyKey in Buddys){
-       if (parseInt(getCookie(BuddyKey)) >= 1){
-        for (let i=0; i < parseInt(getCookie(BuddyKey)); i++){
-            InventoryHtml += `<img src="${Buddys[BuddyKey]}" 
-    onclick='document.cookie = "CurrentBuddy = ${BuddyKey}; path=/";'  
-    oncontextmenu="
-        event.preventDefault(); 
-        let answer = window.prompt('Do you want to sell your buddy for ${Rarities[BuddyKey]} Rolls?', 'Hit Ok or Cancel');
-        if (answer === 'Hit Ok or Cancel') {
-            document.cookie = '${BuddyKey} = ${parseInt(getCookie(BuddyKey)) - 1}; path=/';
-            document.cookie = 'CurrentBuddy=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
-            document.cookie = 'Rolls = ${parseInt(getCookie("Rolls")) + parseInt(Rarities[BuddyKey])}; path=/';
-            document.location.reload();
+
+    for (let BuddyKey in Buddys) {
+        let cookieVal = getCookie(BuddyKey);
+        let count = parseInt(cookieVal || '0', 10);
+        
+        if (count >= 1) {
+            for (let i = 0; i < count; i++) {
+                InventoryHtml += `<img src="${Buddys[BuddyKey]}" 
+                onclick='document.cookie = "CurrentBuddy=${BuddyKey}; path=/";'  
+                oncontextmenu="
+                    event.preventDefault(); 
+                    let answer = window.prompt('Do you want to sell your buddy for ${Rarities[BuddyKey]} Rolls?', 'Hit Ok or Cancel');
+                    if (answer === 'Hit Ok or Cancel') {
+                        let currentCount = parseInt(getCookie('${BuddyKey}'), 10);
+                        document.cookie = '${BuddyKey}=' + (currentCount - 1) + '; path=/';
+                        document.cookie = 'CurrentBuddy=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+                        let currentRolls = parseInt(getCookie('Rolls') || '0', 10);
+                        document.cookie = 'Rolls=' + (currentRolls + parseInt('${Rarities[BuddyKey]}')) + '; path=/';
+                        document.location.reload();
+                    }
+                " 
+                style="margin-right: 10px; cursor: pointer;" alt="Buddy" height="100" width="100">`;
+            }
         }
-    " 
-    style="margin-right: 10px;" alt="Buddy" height="100" width="100">`;
-       }
     }
-    
-}
     return InventoryHtml;
 }
