@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Simple MP4 Video Player in HTML 5!
+        </title>
+    </head>
+    <body>
+        <h1>Click video to play/pause!</h1>
+        <video id="vidbox" style="display: none;">
+            Your browser does not support the video tag.
+        </video>
+    </body>
+    <script>
+        let search = window.location.search;
+        let URL_SP = new URLSearchParams(search);
+        let tag = URL_SP.get("vid");
+        let vid = document.getElementById("vidbox");
+        vid.src = tag;
+        vid.load();
+        vid.style.display = 'block';
+        vid.addEventListener('click', () => {
+            let sound = new Audio("https://www.myinstants.com/media/sounds/ding-sound-effect_2.mp3");
+            sound.play()
+            if (vid.paused) {
+                vid.play();
+            } else {
+                vid.pause();
+            }
+        })
+    </script>
+</html>
